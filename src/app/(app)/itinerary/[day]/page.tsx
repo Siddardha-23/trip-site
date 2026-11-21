@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -10,11 +11,19 @@ export function generateStaticParams() {
   return trip.days.map((day) => ({ day: String(day.dayNumber) }));
 }
 
-export default async function DayPage({
+export default function DayPage({
   params,
 }: {
   params: Promise<{ day: string }>;
 }) {
+  return (
+    <Suspense>
+      <DayContent params={params} />
+    </Suspense>
+  );
+}
+
+async function DayContent({ params }: { params: Promise<{ day: string }> }) {
   const { day: dayParam } = await params;
   const day = trip.days.find((d) => String(d.dayNumber) === dayParam);
   if (!day) notFound();
