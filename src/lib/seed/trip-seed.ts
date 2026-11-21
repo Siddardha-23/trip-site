@@ -7,6 +7,7 @@ import type {
   ChecklistItem,
   OpenDecision,
   Person,
+  Photo,
   Place,
   RentalAgreement,
   Trip,
@@ -755,5 +756,54 @@ export const openDecisions: OpenDecision[] = [
     question:
       "Decide whether January 1 means flying home, driving back or continuing elsewhere.",
     resolved: false,
+  },
+];
+
+// Sample gallery state. These are placeholders (url: null) so the gallery and
+// the public Moments recap have per-day / per-place content to render in mock
+// mode, before any real photo is uploaded. Captions map to the itinerary's
+// anchor stops; real uploads replace this once Supabase Storage is configured.
+export const photos: Photo[] = [
+  {
+    id: "photo-sedona",
+    url: null,
+    caption: "Red-rock morning stop in Sedona",
+    dayId: "day-1",
+    placeId: "sedona",
+  },
+  {
+    id: "photo-south-rim",
+    url: null,
+    caption: "First look at the canyon from Mather Point",
+    dayId: "day-1",
+    placeId: "mather-point",
+  },
+  {
+    id: "photo-balboa",
+    url: null,
+    caption: "Evening walk through Balboa Park, San Diego",
+    dayId: "day-2",
+    placeId: "balboa-park",
+  },
+  {
+    id: "photo-griffith",
+    url: null,
+    caption: "Griffith Observatory and the Hollywood Sign view",
+    dayId: "day-3",
+    placeId: "griffith-observatory",
+  },
+  {
+    id: "photo-golden-gate",
+    url: null,
+    caption: "Golden Gate Bridge on arrival in San Francisco",
+    dayId: "day-4",
+    placeId: "golden-gate",
+  },
+  {
+    id: "photo-ferry-building",
+    url: null,
+    caption: "Ferry Building and the Embarcadero",
+    dayId: "day-5",
+    placeId: "ferry-building",
   },
 ];

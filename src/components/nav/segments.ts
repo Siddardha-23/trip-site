@@ -40,8 +40,13 @@ export const SEGMENTS: Segment[] = [
     icon: "M1 3h15v13H1zM16 8h4l3 3v5h-7M5.5 19a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM18.5 19a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z",
   },
   {
+    href: "/gallery",
+    label: "Gallery",
+    icon: "M3 5h18v14H3zM3 15l5-5 4 4 3-3 6 6M9 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z",
+  },
+  {
     href: "/moments",
     label: "Moments",
-    icon: "M3 5h18v14H3zM3 15l5-5 4 4 3-3 6 6M9 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z",
+    icon: "M20.8 5.6a5 5 0 0 0-7-.3l-.8.8-.8-.8a5 5 0 0 0-7 7l.8.8L12 21l6.9-7.9.8-.8a5 5 0 0 0 1.1-6.7Z",
   },
 ];
