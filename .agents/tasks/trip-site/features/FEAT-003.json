@@ -1,0 +1,27 @@
+{
+  "id": "FEAT-003",
+  "type": "feat",
+  "description": "Core trip UI: responsive app shell with segmented navigation (mobile bottom tabs + desktop sidebar), warm Tailwind theme + reusable UI primitives, the 'plan at a glance' Dashboard home with countdown + trip-progress, the editable day-by-day itinerary for all 5 days with legs/timings/mileage/per-stop notes and the editable places/stops library, and the car-rental/one-way drop-off panel. Depends on FEAT-001 and FEAT-002.",
+  "status": "pending",
+  "steps": [
+    "Create the app shell: src/app/(app)/layout.tsx with a mobile-first bottom tab bar and a desktop sidebar (segments: Dashboard, Itinerary, Map, Group, Money, Logistics, Moments) plus a header with trip title and an editor-unlock control wired to useEditor(). Move the real home into the (app) group.",
+    "Define warm theme tokens in src/app/globals.css (Tailwind v4 @theme / CSS variables: warm palette, typography scale) and build src/components/ui/* primitives: Card, Button, Badge, Stat, SectionHeader, EmptyState, EditableField (inline-edit gated by canEdit). Build src/components/nav/* (BottomTabs, Sidebar, EditorUnlock dialog).",
+    "Build the Dashboard (src/app/(app)/page.tsx + src/components/dashboard/*): trip summary stats (5 nights, 4 bases, ~1,282 mi, ~21.4 hr, pace note), the route ledger (each night + leg), and src/components/countdown/* live countdown to Dec 27 + a trip-progress indicator. Warm, personal tone (not a dry dashboard).",
+    "Build the itinerary: src/app/(app)/itinerary/page.tsx (overview of 5 days) and src/app/(app)/itinerary/[day]/page.tsx (per-day: legs with drive-times + 5:30am starts, mileage, per-stop notes). src/components/itinerary/* and src/components/places/* for the editable per-day places/stops library (add/remove via repository, gated by canEdit; in mock mode mutates mock-store).",
+    "Build the car-rental / one-way drop-off panel: src/components/rental/* rendered within Logistics or at src/app/(app)/logistics/rental/page.tsx — editable manual fields (company, pickup/drop, dates, base rate, one-way drop fee, notes) persisted via repository with mock fallback.",
+    "Commit locally: `git add -A && git commit -m \"feat: app shell, dashboard, itinerary, places, rental panel\"`."
+  ],
+  "acceptance_criteria": [
+    "`npm run dev` serves / and every segment route resolves; nav renders as bottom tabs on narrow viewport and sidebar on wide viewport.",
+    "Dashboard shows all seed summary stats and a live countdown to Dec 27.",
+    "All 5 itinerary days render with the exact seed mileage and drive-times; adding a stop in mock mode (after editor unlock) appears in the day's list.",
+    "Rental panel renders and fields are editable in mock mode.",
+    "`npm run lint`, `npx tsc --noEmit`, and `npm run build` all pass with no .env.local."
+  ],
+  "verification": [
+    "cd d:\\Personal-Projects\\trip-site; npm run lint; npx tsc --noEmit; npm run build",
+    "npm run dev; load http://localhost:3000 and each segment; resize to confirm responsive nav; unlock editor and add a stop"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}

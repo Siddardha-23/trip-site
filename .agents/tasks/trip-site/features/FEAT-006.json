@@ -1,0 +1,27 @@
+{
+  "id": "FEAT-006",
+  "type": "feat",
+  "description": "Social layer + deploy readiness: per-day/per-place photo gallery with client-side image compression before Supabase Storage upload; the public Instagram-grade 'Moments' recap page with Open Graph sharing meta; SETUP.md with exact Supabase/Maps/env/Vercel steps; README; final full-project verification. Depends on FEAT-002 (storage) and FEAT-003 (shell). Last feature.",
+  "status": "pending",
+  "steps": [
+    "Gallery: src/lib/images/compress.ts (resize/compress via browser-image-compression before upload to protect free tier), src/app/(app)/gallery/page.tsx + src/components/gallery/* — per-day/per-place grid + lightbox; upload to Supabase Storage 'photos' bucket when available, else seeded sample state with a disabled uploader.",
+    "Moments: src/app/moments/page.tsx + src/components/moments/* — a public (NOT editor-gated) warm, beautiful recap stitching hero, route, day highlights and photo highlights; add Open Graph + Twitter card metadata so the shared link previews well. Accessible and fast; renders fully in mock mode from seed.",
+    "Write SETUP.md with exact steps: (1) create a Supabase project, run supabase/migrations/0001_init.sql then supabase/seed.sql in the SQL editor, create 'photos' and 'documents' Storage buckets with the stated access policy; (2) create a Google Maps API key, RESTRICT it with an HTTP-referrer restriction AND a HARD quota cap so it can never incur charges; (3) copy .env.local.example to .env.local and fill every variable; (4) deploy to Vercel (import repo, set the same env vars in project settings, deploy). Write/complete README.md describing the app and the mock mode.",
+    "Final verification pass: ensure no secrets are hardcoded anywhere (grep for obvious key patterns), .env.local is gitignored, .env.local.example lists every variable.",
+    "Commit locally: `git add -A && git commit -m \"feat: photo gallery, moments recap page, SETUP docs, deploy prep\"`."
+  ],
+  "acceptance_criteria": [
+    "`/moments` renders fully in mock mode from seed with Open Graph meta present; no editor gate.",
+    "Gallery grid + lightbox render in mock mode; compress.ts typechecks and is called before any upload.",
+    "SETUP.md contains all four numbered sections including the Maps key referrer-restriction AND hard quota cap, and the exact migration/seed filenames.",
+    "`.env.local` is gitignored; `.env.local.example` lists GOOGLE_MAPS_API_KEY (and NEXT_PUBLIC_GOOGLE_MAPS_API_KEY if used), NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY, EDITOR_PASSWORD.",
+    "Full gate passes: `npm run lint` && `npx tsc --noEmit` && `npm run build`, and `npm run dev` loads every section navigable with no .env.local."
+  ],
+  "verification": [
+    "cd d:\\Personal-Projects\\trip-site; npm run lint; npx tsc --noEmit; npm run build  (no .env.local)",
+    "npm run dev; load /moments and /gallery in mock mode; verify every segment is reachable",
+    "New-Item .env.local; git status --ignored; Remove-Item .env.local  (confirm ignored)"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}

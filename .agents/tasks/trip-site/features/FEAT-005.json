@@ -1,0 +1,26 @@
+{
+  "id": "FEAT-005",
+  "type": "feat",
+  "description": "Group, money, and logistics subsystems: people/headcount manager (5-15) with RSVP + realtime; expense splitter (who paid, who owes, running balances, settle-up) with realtime sync; shared budget tracker mapped to the document's priced/not-priced list; driver-rotation tracker with the 'rotate only rested drivers' warning; shared checkable packing/checklist seeded with NPS winter gear; document vault via Supabase Storage; weather/road reminder cards; open-decisions tracker seeded from the document. Depends on FEAT-002 (repository + realtime + storage) and FEAT-003 (shell + ui primitives).",
+  "status": "pending",
+  "steps": [
+    "Group: src/app/(app)/group/page.tsx + src/components/group/* — people list supporting 5 to 15 entries with RSVP status (going/maybe/no), add/remove, headcount summary; subscribe to realtime updates when supabaseAvailable, else mock-store. Seeded with the 4 adults.",
+    "Money: src/app/(app)/money/page.tsx + src/components/expenses/* + src/lib/money/split.ts — expense splitter (payer, participants, amount) computing running balances and settle-up suggestions (pure functions in split.ts); realtime sync of expenses. src/components/budget/* — budget tracker with categories mapped to the document (fuel, parking, $35 park fee, hotels, food) marking priced vs not-priced. src/components/drivers/* — driver-rotation tracker surfacing the 'rotate only rested drivers' warning.",
+    "Logistics: src/app/(app)/logistics/page.tsx + src/components/checklist/* (packing list seeded with NPS winter gear: layers, food, water, scraper, flashlight, over-shoe traction; checkable, realtime), src/components/vault/* (upload hotel/booking confirmations to the Supabase Storage 'documents' bucket; degrade to a local-only list with disabled upload when Storage unavailable), src/components/weather/* (24-48h Grand Canyon forecast/road-check reminder cards from seed), src/components/decisions/* (open-decisions tracker seeded with the 3 document decisions: drive whole route?, whole-trip budget, Jan 1 return leg; status editable).",
+    "Add a single vitest test for src/lib/money/split.ts if vitest is introduced (balances and settle-up correctness); otherwise verify via render. Keep it minimal.",
+    "Commit locally: `git add -A && git commit -m \"feat: group, expense splitter, budget, drivers, and logistics\"`."
+  ],
+  "acceptance_criteria": [
+    "Group list renders the 4 seed adults and supports adding up to 15 with RSVP in mock mode.",
+    "Adding an expense split across people produces correct running balances (manually verify one example, e.g. one payer of $100 across 4 people -> each owes $25).",
+    "Budget tracker shows the document's categories with priced/not-priced flags; drivers panel shows the rested-drivers warning; checklist shows the NPS winter-gear items and toggles; decisions show the 3 seeded open decisions.",
+    "`npm run lint`, `npx tsc --noEmit`, `npm run build` pass with no .env.local; vitest (if added) passes."
+  ],
+  "verification": [
+    "cd d:\\Personal-Projects\\trip-site; npm run lint; npx tsc --noEmit; npm run build  (no .env.local)",
+    "npm run dev; exercise group add, one expense split, checklist toggle, decisions render",
+    "npx vitest run src/lib/money  (only if vitest was added)"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}

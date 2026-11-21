@@ -1,0 +1,28 @@
+{
+  "id": "FEAT-002",
+  "type": "feat",
+  "description": "Data + auth backbone: Supabase browser/server clients with mock fallback, the repository layer that routes reads/writes/subscriptions to Supabase-or-mock, the editor-password unlock (route handlers + cookie + useEditor hook), and the committed SQL schema migration + seed SQL. Depends on FEAT-001 (types + seed).",
+  "status": "pending",
+  "steps": [
+    "Create src/lib/supabase/client.ts (browser client via createBrowserClient from @supabase/ssr) and src/lib/supabase/server.ts (server client via createServerClient with cookie handling). Export `supabaseAvailable` = both NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are set.",
+    "Create src/lib/data/mock-store.ts: an in-memory store hydrated from src/lib/seed/trip-seed.ts with get/list/upsert/remove per entity and a simple pub/sub for simulated realtime (so UI subscribe code has a no-op-ish path in mock mode).",
+    "Create src/lib/data/repository.ts exposing typed read/list/upsert/remove/subscribe functions for every entity (days, stops, places, people, expenses, budgetItems, drivers, checklistItems, decisions, vaultDocuments, weatherCards, photos). When supabaseAvailable, reads/subscribes use the anon browser client; writes go through server route handlers using the service-role key (editor-gated). Otherwise everything uses mock-store.",
+    "Implement editor auth: src/app/api/editor/unlock/route.ts (POST: compare body.password to process.env.EDITOR_PASSWORD; on match set an httpOnly cookie e.g. trip_editor=1; use a constant-time compare); src/app/api/editor/status/route.ts (GET: report whether the cookie is set). Add a generic src/app/api/mutate/route.ts (or per-entity handlers) that performs service-role writes ONLY when the editor cookie is present.",
+    "Create src/hooks/use-editor.ts: client hook calling /api/editor/status, exposing { canEdit, unlock(password), lock() }.",
+    "Write supabase/migrations/0001_init.sql: tables for every entity matching types.ts (snake_case columns), RLS enabled, policy allowing anon SELECT on all, and no anon write (writes only via service role). Enable Realtime publication for expenses, people, stops, checklist_items, open_decisions, budget_items, driver_rotations. Include a comment block listing the two Storage buckets to create manually (photos, documents) since buckets are created via API/dashboard not pure SQL.",
+    "Write supabase/seed.sql: INSERT statements mirroring trip-seed.ts for the 5 days, legs, stops, costs, warnings, decisions, and the 4 seed people.",
+    "Commit locally: `git add -A && git commit -m \"feat: supabase data layer, editor auth, and SQL schema\"`."
+  ],
+  "acceptance_criteria": [
+    "With NO .env.local present, `npm run build` and `npx tsc --noEmit` pass (mock mode compiles and the repository resolves to mock-store).",
+    "supabase/migrations/0001_init.sql has one table per entity in types.ts with matching columns and RLS enabled with a public SELECT policy.",
+    "supabase/seed.sql inserts all 5 days and their legs/stops consistent with trip-seed.ts.",
+    "useEditor hook and /api/editor/unlock + /api/editor/status exist and typecheck; unlock sets an httpOnly cookie compared against EDITOR_PASSWORD."
+  ],
+  "verification": [
+    "cd d:\\Personal-Projects\\trip-site; npx tsc --noEmit; npm run lint; npm run build  (no .env.local)",
+    "Review 0001_init.sql column list against src/lib/types.ts entity-by-entity"
+  ],
+  "blocked_reason": null,
+  "findings": ""
+}
