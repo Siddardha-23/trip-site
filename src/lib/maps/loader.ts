@@ -117,7 +117,7 @@ export function subscribeMapsAuthError(
 }
 
 /**
- * Load the Google Maps libraries the route map needs (maps, marker, routes,
+ * Load the Google Maps libraries the route map needs (core, maps, marker,
  * geometry) once and cache the resolved `maps` namespace. Returns null in mock
  * mode (no key), so callers must guard on `mapsAvailable`. Nothing here throws:
  * a rejected loader promise is surfaced to the caller's `.catch`, and specific
@@ -130,11 +130,18 @@ export function loadGoogleMaps(): Promise<typeof google.maps> | null {
     const loader = new Loader({
       apiKey: apiKey!,
       version: "weekly",
-      libraries: ["maps", "marker", "routes", "geometry"],
     });
-    loaderPromise = loader
-      .importLibrary("maps")
-      .then((maps) => maps as unknown as typeof google.maps);
+    // Import every library the map uses. `importLibrary("maps")` alone only
+    // populates the maps namespace (Map, Polyline); Marker lives in "marker"
+    // and Size/Point/LatLngBounds in "core". Loading all of them populates the
+    // shared `google.maps` global, which we return so every constructor the
+    // RouteMap references (g.Marker, g.Size, g.Point, …) is actually defined.
+    loaderPromise = Promise.all([
+      loader.importLibrary("core"),
+      loader.importLibrary("maps"),
+      loader.importLibrary("marker"),
+      loader.importLibrary("geometry"),
+    ]).then(() => google.maps);
   }
   return loaderPromise;
 }

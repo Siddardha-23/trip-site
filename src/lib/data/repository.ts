@@ -84,6 +84,14 @@ async function errorText(res: Response): Promise<string> {
 
 // --- realtime subscriptions --------------------------------------------------
 /**
+ * Monotonic counter making every realtime channel name unique. Supabase rejects
+ * adding a `postgres_changes` callback to a channel that has already been
+ * subscribed, so two components watching the same entity must not share a
+ * channel name — each subscribe() call gets its own channel.
+ */
+let channelSeq = 0;
+
+/**
  * Subscribe to changes for an entity. The callback fires on any change; callers
  * typically re-run `list`. Returns an unsubscribe function. In mock mode this
  * wires into the mock store's pub/sub.
@@ -92,8 +100,10 @@ export function subscribe(entity: EntityName, onChange: () => void): () => void 
   if (!supabaseAvailable) return mockStore.subscribe(entity, onChange);
   const client = createClient();
   if (!client) return mockStore.subscribe(entity, onChange);
+  // Unique name per subscription so concurrent subscribers (multiple components
+  // on a page, or a Strict Mode double-mount) never collide on one channel.
   const channel = client
-    .channel(`realtime:${TABLE_NAMES[entity]}`)
+    .channel(`realtime:${TABLE_NAMES[entity]}:${channelSeq++}`)
     .on(
       "postgres_changes",
       { event: "*", schema: "public", table: TABLE_NAMES[entity] },
@@ -101,6 +111,6 @@ export function subscribe(entity: EntityName, onChange: () => void): () => void 
     )
     .subscribe();
   return () => {
-    client.removeChannel(channel);
+    void client.removeChannel(channel);
   };
 }

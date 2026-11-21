@@ -136,7 +136,9 @@ export function RouteMap() {
       carRef.current = car;
 
       // Animate the car looping along the polyline. `progress` spans the whole
-      // route in [0, segments]; the integer part selects the segment.
+      // route in [0, segments); the integer part selects the segment. Guard the
+      // index so floating-point accumulation can never make it reach the final
+      // point (where path[i + 1] would be undefined and Maps throws on it).
       const segments = path.length - 1;
       const speed = 0.0045; // fraction of a segment per frame
       let progress = 0;
@@ -144,12 +146,12 @@ export function RouteMap() {
       const tick = () => {
         progress += speed;
         if (progress >= segments) progress = 0;
-        const i = Math.floor(progress);
+        const i = Math.min(Math.floor(progress), segments - 1);
         const t = progress - i;
         car.setPosition(lerp(path[i], path[i + 1], t));
         rafRef.current = requestAnimationFrame(tick);
       };
-      rafRef.current = requestAnimationFrame(tick);
+      if (segments > 0) rafRef.current = requestAnimationFrame(tick);
 
       setReady(true);
     }).catch(() => {
