@@ -3,6 +3,7 @@
 // path in mock mode. This is the backend when no Supabase env vars are set.
 import {
   budgetItems as seedBudgetItems,
+  checklistItems as seedChecklistItems,
   openDecisions as seedDecisions,
   people as seedPeople,
   places as seedPlaces,
@@ -36,7 +37,8 @@ function buildStore(): Store {
   for (const decision of seedDecisions) store.decisions.set(decision.id, decision);
   for (const card of seedWeatherCards) store.weatherCards.set(card.id, card);
   for (const rental of seedRentals) store.rentals.set(rental.id, rental);
-  // expenses, drivers, checklistItems, vaultDocuments, photos start empty.
+  for (const item of seedChecklistItems) store.checklistItems.set(item.id, item);
+  // expenses, drivers, vaultDocuments, photos start empty.
 
   return store;
 }

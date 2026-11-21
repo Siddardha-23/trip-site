@@ -1,17 +1,15 @@
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { EmptyState } from "@/components/ui/EmptyState";
+import { GroupManager } from "@/components/group/GroupManager";
+import { people } from "@/lib/seed/trip-seed";
 
 export default function GroupPage() {
   return (
     <div className="flex flex-col gap-6">
       <SectionHeader
         title="Group"
-        subtitle="Who's coming, RSVPs and the driver rotation."
+        subtitle="Who's coming and their RSVP. Supports 5 to 15 travelers."
       />
-      <EmptyState
-        title="The group roster is on its way"
-        description="RSVPs, traveler details and the driver rotation arrive in a later update."
-      />
+      <GroupManager seed={people} />
     </div>
   );
 }

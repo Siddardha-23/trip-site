@@ -174,6 +174,18 @@ insert into public.open_decisions (id, question, detail, resolved, resolution) v
 on conflict (id) do nothing;
 
 -- ---------------------------------------------------------------------------
+-- Checklist items (NPS winter gear recommended for the Grand Canyon:
+-- layers, food, water, a scraper, a flashlight and over-the-shoe traction)
+insert into public.checklist_items (id, label, category, checked, assignee_id) values
+  ('check-layers', 'Layers (warm clothing)', 'NPS winter gear', false, null),
+  ('check-food', 'Food', 'NPS winter gear', false, null),
+  ('check-water', 'Water', 'NPS winter gear', false, null),
+  ('check-scraper', 'Ice scraper', 'NPS winter gear', false, null),
+  ('check-flashlight', 'Flashlight', 'NPS winter gear', false, null),
+  ('check-traction', 'Over-the-shoe traction for icy paths', 'NPS winter gear', false, null)
+on conflict (id) do nothing;
+
+-- ---------------------------------------------------------------------------
 -- Rental agreement (one-way draft; nothing priced yet)
 insert into public.rental_agreements (id, company, pickup_location, dropoff_location, pickup_date, dropoff_date, base_rate, one_way_drop_fee, notes) values
   ('rental-one-way', '', 'Tempe, AZ', 'San Francisco, CA', '2025-12-27', '2026-01-01', null, null, 'One-way rental draft. Returning the car in San Francisco can avoid two nights of city parking; rental terms and drop fees are not priced yet.')

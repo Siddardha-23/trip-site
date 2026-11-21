@@ -4,6 +4,7 @@
 
 import type {
   BudgetItem,
+  ChecklistItem,
   OpenDecision,
   Person,
   Place,
@@ -691,6 +692,48 @@ export const weatherCards: WeatherCard[] = [
     warnings: [
       "This itinerary does not promise a 2026 fireworks show, time or viewing area.",
     ],
+  },
+];
+
+// Packing / preparation checklist, seeded with the NPS winter-gear items the
+// document recommends for the Grand Canyon: "layers, food, water, a scraper,
+// a flashlight and over-the-shoe traction for icy paths."
+export const checklistItems: ChecklistItem[] = [
+  {
+    id: "check-layers",
+    label: "Layers (warm clothing)",
+    category: "NPS winter gear",
+    checked: false,
+  },
+  {
+    id: "check-food",
+    label: "Food",
+    category: "NPS winter gear",
+    checked: false,
+  },
+  {
+    id: "check-water",
+    label: "Water",
+    category: "NPS winter gear",
+    checked: false,
+  },
+  {
+    id: "check-scraper",
+    label: "Ice scraper",
+    category: "NPS winter gear",
+    checked: false,
+  },
+  {
+    id: "check-flashlight",
+    label: "Flashlight",
+    category: "NPS winter gear",
+    checked: false,
+  },
+  {
+    id: "check-traction",
+    label: "Over-the-shoe traction for icy paths",
+    category: "NPS winter gear",
+    checked: false,
   },
 ];
 
