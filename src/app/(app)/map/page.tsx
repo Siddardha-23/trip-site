@@ -1,5 +1,5 @@
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { EmptyState } from "@/components/ui/EmptyState";
+import { MapSection } from "@/components/map/MapSection";
 
 export default function MapPage() {
   return (
@@ -8,10 +8,7 @@ export default function MapPage() {
         title="Map"
         subtitle="The route from Tempe to San Francisco, with every stop."
       />
-      <EmptyState
-        title="The live map is on its way"
-        description="The route map with driving legs and animated car markers arrives in a later update. For now, see the day-by-day drive in the Itinerary."
-      />
+      <MapSection />
     </div>
   );
 }
