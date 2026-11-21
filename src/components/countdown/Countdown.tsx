@@ -81,9 +81,9 @@ export function Countdown({ startDate, endDate }: CountdownProps) {
       {UNITS.map(({ key, label }) => (
         <div
           key={key}
-          className="flex min-w-14 flex-col items-center rounded-xl bg-sand-100 px-3 py-2"
+          className="countdown-tile flex min-w-14 flex-col items-center rounded-xl border border-ember-400/30 bg-gradient-to-b from-glow-300/60 to-sand-100 px-3 py-2"
         >
-          <span className="text-2xl font-semibold tabular-nums text-ink-900">
+          <span className="text-2xl font-semibold tabular-nums text-clay-700">
             {String(r[key]).padStart(2, "0")}
           </span>
           <span className="text-xs uppercase tracking-wide text-muted">

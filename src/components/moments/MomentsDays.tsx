@@ -14,11 +14,12 @@ export function MomentsDays({ days }: { days: Day[] }) {
         {highlights.map((day) => (
           <li
             key={day.id}
-            className="rounded-2xl border border-[color:var(--border)] bg-surface p-5 shadow-sm"
+            className="rounded-2xl border border-[color:var(--border)] border-l-4 border-l-ember-400 bg-surface p-5 shadow-sm"
           >
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <h3 className="text-lg font-semibold text-ink-900">
-                Day {day.dayNumber} · {day.title}
+                <span className="text-clay-700">Day {day.dayNumber}</span> ·{" "}
+                {day.title}
               </h3>
               <span className="text-xs text-muted">
                 {day.weekday}, {day.date}
