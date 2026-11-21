@@ -1,7 +1,11 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { loadGoogleMaps } from "@/lib/maps/loader";
+import {
+  getMapsAuthError,
+  loadGoogleMaps,
+  subscribeMapsAuthError,
+} from "@/lib/maps/loader";
 import { ROUTE_CENTER, ROUTE_POINTS } from "@/lib/maps/route";
 import type { LatLng } from "@/lib/maps/route";
 import {
@@ -41,6 +45,9 @@ export function RouteMap() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [ready, setReady] = useState(false);
   const [error, setError] = useState(false);
+  const [authError, setAuthError] = useState<string | null>(
+    getMapsAuthError(),
+  );
   const [sharing, setSharing] = useState(false);
   const [locError, setLocError] = useState<string | null>(null);
 
@@ -60,6 +67,16 @@ export function RouteMap() {
       typeof crypto !== "undefined" && "randomUUID" in crypto
         ? crypto.randomUUID()
         : `s-${Date.now()}`;
+  }, []);
+
+  // Capture the specific Google auth-failure reason (RefererNotAllowedMapError,
+  // ApiNotActivatedMapError, …) delivered via window.gm_authFailure. When it
+  // fires the map never finishes authenticating, so also show the error state.
+  useEffect(() => {
+    return subscribeMapsAuthError((reason) => {
+      setAuthError(reason);
+      setError(true);
+    });
   }, []);
 
   // Build the map, polyline and animated car marker.
@@ -227,8 +244,8 @@ export function RouteMap() {
         ) : null}
         {error ? (
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center px-6 text-center text-sm text-muted">
-            The map could not load. Check the Maps key and its referrer
-            restrictions.
+            {authError ??
+              "The map could not load. Check the Maps key and its referrer restrictions."}
           </div>
         ) : null}
       </div>
