@@ -1,7 +1,0 @@
-{
-  "task_id": "task-trip-site",
-  "task_description": "Build and prepare for Vercel deployment a trip-planning web app for a one-way Arizona (Tempe) -> San Francisco road trip (Dec 27-Jan 1, 5 nights, 4-15 people). Next.js 16 App Router + TypeScript, Tailwind v4, Supabase (Postgres + Storage + Realtime), Google Maps JS API. Shared view link + editor password auth. Must stay in free tiers forever and must build/run in a degraded mock mode with no real secrets. Seed data from the itinerary document.",
-  "status": "pending",
-  "feature_order": ["FEAT-001", "FEAT-002", "FEAT-003", "FEAT-004", "FEAT-005", "FEAT-006"],
-  "blocked_reason": null
-}

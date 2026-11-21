@@ -1,0 +1,4 @@
+.agents
+_itinerary_extracted.txt
+*.pdf
+.git
