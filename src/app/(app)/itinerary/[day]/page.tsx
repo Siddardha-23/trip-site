@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Card } from "@/components/ui/Card";
 import { LegList } from "@/components/itinerary/LegList";
+import { DayExperiences } from "@/components/itinerary/DayExperiences";
 import { StopsLibrary } from "@/components/places/StopsLibrary";
 import { trip } from "@/lib/seed/trip-seed";
 
@@ -74,6 +75,16 @@ async function DayContent({ params }: { params: Promise<{ day: string }> }) {
               ))}
             </ul>
           </Card>
+        </section>
+      ) : null}
+
+      {day.experiences ? (
+        <section>
+          <SectionHeader
+            title="Make it memorable"
+            subtitle="Scenic viewpoints, local gems and food culture — suggestions, not fixed plans."
+          />
+          <DayExperiences data={day.experiences} />
         </section>
       ) : null}
     </div>

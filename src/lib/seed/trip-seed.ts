@@ -158,9 +158,9 @@ export const trip: Trip = {
   id: "az-to-sf-2025",
   title: "Arizona to San Francisco",
   subtitle: "Dec 27-Jan 1 · 5 nights · 4 people",
-  startDate: "2025-12-27",
-  endDate: "2025-12-31", // last hotel night (2nd SF night)
-  checkoutDate: "2026-01-01",
+  startDate: "2026-12-27",
+  endDate: "2026-12-31", // last hotel night (2nd SF night)
+  checkoutDate: "2027-01-01",
   nights: 5,
   travelerCount: 4,
   roomSetup: "1 room · 2 queen beds",
@@ -173,7 +173,7 @@ export const trip: Trip = {
     {
       id: "day-1",
       dayNumber: 1,
-      date: "2025-12-27",
+      date: "2026-12-27",
       weekday: "Sunday",
       title: "Sedona to the Grand Canyon South Rim",
       overnight: "South Rim or Tusayan",
@@ -253,11 +253,62 @@ export const trip: Trip = {
         "Night: South Rim or Tusayan. Staying inside the park reduces driving; Tusayan is the closest outside-park base.",
         "Park entry $35 per private vehicle, valid 7 days.",
       ],
+      experiences: {
+        feeling:
+          "This is the day the trip stops being a plan and becomes a feeling: red rock at sunrise, then standing at the edge of something a mile deep and older than you can hold in your head. Let the group go quiet here; some places earn the silence.",
+        viewpoints: [
+          {
+            title: "Airport Mesa Overlook, Sedona",
+            detail:
+              "A short pull-off on the mesa with a 360° sweep of the red-rock buttes — best in early light before the breakfast stop, when the rock glows and the crowds are thin.",
+            source: "https://en.wikipedia.org/wiki/Sedona,_Arizona",
+          },
+          {
+            title: "Mather Point first look",
+            detail:
+              "The classic first view of the canyon just steps from the Visitor Center. Walk a little past the railing crowd along the Rim Trail to find a quieter ledge to take it in.",
+            source:
+              "https://www.nps.gov/grca/planyourvisit/grand-canyon-village.htm",
+          },
+          {
+            title: "Yavapai Point & Geology Museum",
+            detail:
+              "A short walk west of Mather along the rim; the picture windows frame the canyon and the free museum explains the layers you are looking at, two billion years of rock stacked in plain sight.",
+            source: "https://www.nps.gov/grca/planyourvisit/yavapai-point.htm",
+          },
+        ],
+        hiddenGems: [
+          {
+            title: "Chapel of the Holy Cross, Sedona",
+            detail:
+              "A modernist chapel built straight into the red rock south of town — a quiet, moving stop that most drive-through visitors skip. Free to enter.",
+            source: "https://en.wikipedia.org/wiki/Chapel_of_the_Holy_Cross_(Sedona,_Arizona)",
+          },
+          {
+            title: "Trail of Time, South Rim",
+            detail:
+              "A rim walk where every meter marks a million years of the canyon's history; walking it slowly turns the view into a story instead of a photo.",
+            source: "https://www.nps.gov/grca/planyourvisit/trail-of-time.htm",
+          },
+        ],
+        foodCulture: [
+          {
+            title: "Sedona breakfast with a view",
+            detail:
+              "Keep the Sedona stop to a relaxed sit-down breakfast rather than a rushed drive-through; the uptown cafes with patio red-rock views are the point of stopping here at all.",
+          },
+          {
+            title: "Pack a canyon picnic",
+            detail:
+              "Grab provisions before the rim — eating a simple lunch on a quiet overlook beats waiting for a crowded park cafe, and the view is free.",
+          },
+        ],
+      },
     },
     {
       id: "day-2",
       dayNumber: 2,
-      date: "2025-12-28",
+      date: "2026-12-28",
       weekday: "Monday",
       title: "Grand Canyon to San Diego",
       overnight: "San Diego",
@@ -315,11 +366,51 @@ export const trip: Trip = {
       notes: [
         "Winter access: South Rim is open year-round, but snow and ice can temporarily close roads. Hermit Road normally opens to private vehicles under 22 feet from December through February, weather permitting. Stay on rim viewpoints rather than adding a below-rim hike to this short visit.",
       ],
+      experiences: {
+        feeling:
+          "A long day behind the wheel earns a soft landing: the Pacific, salt air, and a city that moves at half the speed of the road you just drove. Don't over-plan the evening — let San Diego decompress the group.",
+        viewpoints: [
+          {
+            title: "Sunset Cliffs Natural Park",
+            detail:
+              "Dramatic sandstone bluffs over the ocean in Point Loma, timed perfectly for arrival-day sunset. No ticket, no gate, just the horizon.",
+            source: "https://www.sandiego.gov/park-and-recreation/parks/regional/shoreline/sunset",
+          },
+          {
+            title: "Cabrillo National Monument, Point Loma",
+            detail:
+              "The tip of the peninsula with sweeping views back across the bay and city skyline; an NPS site, so your canyon mindset carries over.",
+            source: "https://www.nps.gov/cabr/index.htm",
+          },
+        ],
+        hiddenGems: [
+          {
+            title: "Balboa Park after dark",
+            detail:
+              "The Spanish-Revival architecture along El Prado is lit at night and the grounds stay open and free — a quiet, grand walk when the museums have closed.",
+            source: "https://en.wikipedia.org/wiki/Balboa_Park_(San_Diego)",
+          },
+          {
+            title: "Old Town San Diego",
+            detail:
+              "The state historic park preserves California's first European settlement; low-key, walkable, and a genuine sense of the region's layered Mexican and Spanish roots.",
+            source: "https://en.wikipedia.org/wiki/Old_Town_San_Diego_State_Historic_Park",
+          },
+        ],
+        foodCulture: [
+          {
+            title: "A real San Diego taco",
+            detail:
+              "The city's border-shaped food culture lives in its taco shops and Baja-style seafood; a casual taqueria dinner fits the tired-but-happy arrival mood better than anything formal.",
+            source: "https://en.wikipedia.org/wiki/San_Diego",
+          },
+        ],
+      },
     },
     {
       id: "day-3",
       dayNumber: 3,
-      date: "2025-12-29",
+      date: "2026-12-29",
       weekday: "Tuesday",
       title: "Early drive to Los Angeles",
       overnight: "Los Angeles",
@@ -372,11 +463,56 @@ export const trip: Trip = {
         "Protect this driving day: keep the 5:30am start and avoid adding Route 66 or Joshua Tree detours. Rotate only between listed, rested drivers. If nobody wants a drive this long, this is the first leg to replace with a flight or split with an extra night.",
         "Night: Los Angeles. A Hollywood base fits this stop.",
       ],
+      experiences: {
+        feeling:
+          "LA rewards the group that treats it as a view rather than a checklist. From Griffith, the whole basin spreads out to the ocean at dusk — city lights coming on, the sign on the hill, that specific feeling of having arrived in the myth of the place.",
+        viewpoints: [
+          {
+            title: "Griffith Observatory terraces at dusk",
+            detail:
+              "Arrive before sunset and stay for blue hour: the free rooftop and lawn give you the Hollywood Sign on one side and the glittering LA basin on the other as the lights come up.",
+            source: "https://en.wikipedia.org/wiki/Griffith_Observatory",
+          },
+          {
+            title: "Griffith Park trails",
+            detail:
+              "The surrounding park is one of the largest urban wildernesses in North America; even a short walk up toward the sign trades the parking-lot crowd for quiet ridgeline views.",
+            source: "https://en.wikipedia.org/wiki/Griffith_Park",
+          },
+        ],
+        hiddenGems: [
+          {
+            title: "The Last Bookstore, Downtown",
+            detail:
+              "A cathedral-like independent bookstore in a former bank, with book tunnels and arches upstairs — a quietly magical, un-touristy hour if the morning stop lands downtown.",
+            source: "https://en.wikipedia.org/wiki/The_Last_Bookstore",
+          },
+          {
+            title: "Santa Monica Pier at golden hour",
+            detail:
+              "If the flexible morning goes coastal instead, the pier and the end of Route 66 carry a nostalgic, carnival-light charm that photographs beautifully late in the day.",
+            source: "https://en.wikipedia.org/wiki/Santa_Monica_Pier",
+          },
+        ],
+        foodCulture: [
+          {
+            title: "Grand Central Market",
+            detail:
+              "A century-old downtown food hall where the city's immigrant food cultures sit side by side; a single lunch can span Mexican, Thai, and classic deli counters.",
+            source: "https://en.wikipedia.org/wiki/Grand_Central_Market",
+          },
+          {
+            title: "Keep valuables out of sight",
+            detail:
+              "LA is a joy on foot, but it's a big city: lock the car, take nothing visible, and the day stays carefree.",
+          },
+        ],
+      },
     },
     {
       id: "day-4",
       dayNumber: 4,
-      date: "2025-12-30",
+      date: "2026-12-30",
       weekday: "Wednesday",
       title: "Los Angeles to San Francisco",
       overnight: "San Francisco",
@@ -434,11 +570,51 @@ export const trip: Trip = {
       notes: [
         "If this is a one-way rental, returning it in SF can avoid two nights of city parking; rental terms and drop fees are not priced yet.",
       ],
+      experiences: {
+        feeling:
+          "The last long drive ends at the edge of the continent. Timing the arrival for late-afternoon light at the Golden Gate — if the fog cooperates — gives the group a shared 'we made it' moment that the whole trip has been building toward.",
+        viewpoints: [
+          {
+            title: "Battery Spencer, Marin side",
+            detail:
+              "Just north of the bridge, this old gun battery frames the towers against the city skyline — the definitive Golden Gate view, and free. Weather and fog permitting.",
+            source: "https://en.wikipedia.org/wiki/Golden_Gate_Bridge",
+          },
+          {
+            title: "Palace of Fine Arts lagoon",
+            detail:
+              "A surviving 1915 exposition rotunda reflected in a still lagoon; calm, grand, and a gentle contrast to a day of freeway after the bridge.",
+            source: "https://en.wikipedia.org/wiki/Palace_of_Fine_Arts",
+          },
+        ],
+        hiddenGems: [
+          {
+            title: "Fort Point under the bridge",
+            detail:
+              "A Civil War-era brick fort directly beneath the south anchorage; standing under the roaring span is a very different feeling from seeing it from afar.",
+            source: "https://www.nps.gov/fopo/index.htm",
+          },
+          {
+            title: "The Embarcadero walk",
+            detail:
+              "If the bridge is fogged in, the waterfront promenade from the Ferry Building toward the bridge is a reliable, beautiful plan B with open bay views.",
+            source: "https://en.wikipedia.org/wiki/The_Embarcadero_(San_Francisco)",
+          },
+        ],
+        foodCulture: [
+          {
+            title: "Ferry Building Marketplace",
+            detail:
+              "A restored ferry terminal turned food hall of Northern California makers — a perfect low-key arrival dinner showcasing the region's produce and coffee culture.",
+            source: "https://en.wikipedia.org/wiki/San_Francisco_Ferry_Building",
+          },
+        ],
+      },
     },
     {
       id: "day-5",
       dayNumber: 5,
-      date: "2025-12-31",
+      date: "2026-12-31",
       weekday: "Thursday",
       title: "A full San Francisco day",
       overnight: "San Francisco (2nd night)",
@@ -477,18 +653,104 @@ export const trip: Trip = {
           kind: "flex",
           time: "Evening",
           description:
-            "Keep dinner and late plans adjustable until official 2026 event details are published.",
+            "Keep dinner and late plans adjustable until official 2027 event details are published.",
         },
       ],
       notes: [
         "Night: second night in San Francisco. Staying in the same hotel avoids a New Year's Day checkout move.",
         "No Big Sur detour in this version. Highway 1 is not part of the timed route; adding the coast would need a different pace or another night.",
       ],
+      experiences: {
+        feeling:
+          "The last full day, and New Year's Eve — the trip's emotional finish line. However the group rings in 2027, the point is that you do it together, somewhere that feels like the city. Keep the plan loose enough that the night can become whatever the group needs it to be.",
+        viewpoints: [
+          {
+            title: "Twin Peaks at night",
+            detail:
+              "The highest easy viewpoint in the city, with the whole grid of lights laid out below — a quieter place to watch midnight than the packed waterfront, if the group wants calm over crowds.",
+            source: "https://en.wikipedia.org/wiki/Twin_Peaks_(San_Francisco)",
+          },
+          {
+            title: "Coit Tower & Telegraph Hill",
+            detail:
+              "Daytime: climb the Filbert Street steps through gardens to the tower for a bay panorama that stitches the whole city together.",
+            source: "https://en.wikipedia.org/wiki/Coit_Tower",
+          },
+        ],
+        hiddenGems: [
+          {
+            title: "Golden Gate Park, quietly",
+            detail:
+              "The Japanese Tea Garden and the conservatory give the group a slow, green morning after a week of movement — the opposite energy of a countdown crowd.",
+            source: "https://en.wikipedia.org/wiki/Golden_Gate_Park",
+          },
+          {
+            title: "16th Avenue Tiled Steps",
+            detail:
+              "A community-made mosaic staircase in the Sunset that climbs to a neighborhood viewpoint; the kind of small, human detail that makes a city feel personal.",
+            source: "https://en.wikipedia.org/wiki/Hidden_Garden_Steps",
+          },
+        ],
+        foodCulture: [
+          {
+            title: "Dim sum in Chinatown",
+            detail:
+              "San Francisco's Chinatown is the oldest in North America; a late-morning dim sum feast is both a meal and a walk through living history.",
+            source: "https://en.wikipedia.org/wiki/Chinatown,_San_Francisco",
+          },
+          {
+            title: "North Beach, Italian SF",
+            detail:
+              "An espresso and pastry in the old Italian quarter, then dinner nearby, is the unhurried counterweight to a big NYE night.",
+            source: "https://en.wikipedia.org/wiki/North_Beach,_San_Francisco",
+          },
+        ],
+        nye: [
+          {
+            spot: "Embarcadero & Ferry Building waterfront",
+            detail:
+              "The central bayfront between the Ferry Building and the piers is the traditional gathering spot to watch any midnight display over the water. Arrive early and dress in warm layers — December nights on the bay are cold and damp.",
+            crowdNote:
+              "Expect the largest crowds and heavy foot traffic here; it's energetic and festive but not the place for anyone wanting quiet.",
+            source: "https://en.wikipedia.org/wiki/San_Francisco_Ferry_Building",
+          },
+          {
+            spot: "Elevated viewpoints: Twin Peaks or Coit Tower area",
+            detail:
+              "For a view over the crowds, higher ground across the city lets you see the skyline and any fireworks from a distance, with far more breathing room.",
+            crowdNote:
+              "Much calmer than the waterfront, but it's dark and cold up high — bring a light and warm clothing, and don't go alone.",
+            source: "https://en.wikipedia.org/wiki/Twin_Peaks_(San_Francisco)",
+          },
+          {
+            spot: "Neighborhood option: a North Beach or Chinatown dinner",
+            detail:
+              "A lower-key alternative: a long celebratory dinner in a lively neighborhood, toasting midnight somewhere warm. Perfect if the group is tired after a week of 5:30am starts.",
+            crowdNote:
+              "Book ahead — popular restaurants fill fast on NYE. This keeps everyone together and off the cold streets.",
+            source: "https://en.wikipedia.org/wiki/North_Beach,_San_Francisco",
+          },
+          {
+            spot: "Getting around and staying safe",
+            detail:
+              "Plan transport before the night: Muni and BART run extended late-night service on New Year's Eve in past years, and streets near the waterfront close to cars. Agree on a meeting point and keep phones charged in case the group splits up.",
+            crowdNote:
+              "Rideshare surges and road closures make driving near downtown painful at midnight; transit or walking from a nearby hotel is usually easier.",
+            source: "https://www.bart.gov/",
+          },
+          {
+            spot: "An honest note on official plans",
+            detail:
+              "As of planning, official details for the December 31, 2026 (ring in 2027) celebration — whether there is a fireworks show, and its time and viewing area — may not be published yet. Treat the spots above as reliable gathering places and recheck the city's official channels closer to the date before promising anyone a show.",
+            source: "https://sf.gov/",
+          },
+        ],
+      },
     },
     {
       id: "day-checkout",
       dayNumber: 6,
-      date: "2026-01-01",
+      date: "2027-01-01",
       weekday: "Friday",
       title: "Departure and the missing return leg",
       overnight: null,
@@ -650,8 +912,8 @@ export const rentals: RentalAgreement[] = [
     company: "",
     pickupLocation: "Tempe, AZ",
     dropoffLocation: "San Francisco, CA",
-    pickupDate: "2025-12-27",
-    dropoffDate: "2026-01-01",
+    pickupDate: "2026-12-27",
+    dropoffDate: "2027-01-01",
     baseRate: null,
     oneWayDropFee: null,
     notes:
@@ -664,7 +926,7 @@ export const weatherCards: WeatherCard[] = [
   {
     id: "weather-grand-canyon",
     location: "Grand Canyon South Rim",
-    date: "2025-12-27",
+    date: "2026-12-27",
     guidance:
       "Recheck the forecast and roads 24-48 hours before driving.",
     warnings: [
@@ -676,7 +938,7 @@ export const weatherCards: WeatherCard[] = [
   {
     id: "weather-driving-day",
     location: "Day 2 driving day (South Rim -> San Diego)",
-    date: "2025-12-28",
+    date: "2026-12-28",
     guidance:
       "Protect the long driving day: keep the 5:30am start, rotate only between listed, rested drivers.",
     warnings: [
@@ -687,11 +949,11 @@ export const weatherCards: WeatherCard[] = [
   {
     id: "weather-nye",
     location: "San Francisco New Year's Eve",
-    date: "2025-12-31",
+    date: "2026-12-31",
     guidance:
-      "Fireworks are not locked in. As checked on November 7, the Downtown SF organizer page still lists December 31, 2025 as a past event.",
+      "Fireworks are not locked in. Official details for the December 31, 2026 (ring in 2027) celebration may not be published yet; recheck the Downtown SF organizer page closer to the date.",
     warnings: [
-      "This itinerary does not promise a 2026 fireworks show, time or viewing area.",
+      "This itinerary does not promise a 2027 fireworks show, time or viewing area.",
     ],
   },
 ];

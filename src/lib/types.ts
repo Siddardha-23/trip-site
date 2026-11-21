@@ -24,6 +24,38 @@ export interface Trip {
   days: Day[];
 }
 
+/** A single experiential suggestion (viewpoint, hidden gem or food-culture note). */
+export interface ExperienceItem {
+  title: string;
+  detail: string;
+  /** Real source URL backing any asserted fact (NPS / official tourism / Wikipedia). */
+  source?: string;
+}
+
+/** A New Year's Eve viewing/celebration suggestion. */
+export interface NyeGuidance {
+  spot: string;
+  detail: string;
+  crowdNote?: string;
+  /** Real source URL backing any asserted fact. */
+  source?: string;
+}
+
+/**
+ * Soulful, experiential suggestions layered on top of a day's planning facts.
+ * These are suggestions and sentiment, kept separate from the exact planning
+ * figures (notes/legs). Do not move factual figures in here.
+ */
+export interface DayExperiences {
+  /** A short "why this matters" / feeling line for the destination. */
+  feeling: string;
+  viewpoints: ExperienceItem[];
+  hiddenGems: ExperienceItem[];
+  foodCulture: ExperienceItem[];
+  /** New Year's Eve guidance (Day 5 only). */
+  nye?: NyeGuidance[];
+}
+
 /** One day of the itinerary. */
 export interface Day {
   id: string;
@@ -34,11 +66,14 @@ export interface Day {
   /** Where the night is spent (null for the checkout day). */
   overnight: string | null;
   summary: string;
-  /** Driving legs that occur on this day. */
+  /** Driving legs that occur on this day. PLANNING FACTS — exact figures. */
   legs: RouteLeg[];
   /** Points of interest / activities for the day, in order. */
   stops: Stop[];
+  /** PLANNING FACTS — warnings and exact logistics. */
   notes: string[];
+  /** EXPERIENTIAL SUGGESTIONS — soulful, non-factual-figure content; optional. */
+  experiences?: DayExperiences;
 }
 
 /** A driving leg between two places. */
