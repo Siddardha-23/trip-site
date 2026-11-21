@@ -158,6 +158,19 @@ create table if not exists public.photos (
   uploaded_by_id text
 );
 
+-- RentalAgreement. Manually editable car-rental / one-way drop-off fields.
+create table if not exists public.rental_agreements (
+  id text primary key,
+  company text not null default '',
+  pickup_location text not null default '',
+  dropoff_location text not null default '',
+  pickup_date text not null default '',
+  dropoff_date text not null default '',
+  base_rate numeric,
+  one_way_drop_fee numeric,
+  notes text
+);
+
 -- ---------------------------------------------------------------------------
 -- Row Level Security: enable on every table, allow anon SELECT only.
 -- Writes are performed server-side with the service-role key (bypasses RLS).
@@ -168,7 +181,7 @@ declare
   tables text[] := array[
     'trips', 'days', 'stops', 'places', 'people', 'expenses', 'budget_items',
     'driver_rotations', 'checklist_items', 'open_decisions', 'vault_documents',
-    'weather_cards', 'photos'
+    'weather_cards', 'photos', 'rental_agreements'
   ];
 begin
   foreach t in array tables loop
@@ -193,3 +206,4 @@ alter publication supabase_realtime add table public.checklist_items;
 alter publication supabase_realtime add table public.open_decisions;
 alter publication supabase_realtime add table public.budget_items;
 alter publication supabase_realtime add table public.driver_rotations;
+alter publication supabase_realtime add table public.rental_agreements;

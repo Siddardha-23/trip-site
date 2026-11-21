@@ -178,6 +178,21 @@ export interface OpenDecision {
   resolution?: string;
 }
 
+/** A car-rental / one-way drop-off agreement. All fields are manually editable. */
+export interface RentalAgreement {
+  id: string;
+  company: string;
+  pickupLocation: string;
+  dropoffLocation: string;
+  pickupDate: ISODate | "";
+  dropoffDate: ISODate | "";
+  /** Base rental rate in USD; null until known. */
+  baseRate: number | null;
+  /** One-way drop fee in USD; null until known. */
+  oneWayDropFee: number | null;
+  notes?: string;
+}
+
 /** A photo in the gallery / moments feed. */
 export interface Photo {
   id: string;

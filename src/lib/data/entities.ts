@@ -11,6 +11,7 @@ import type {
   Person,
   Photo,
   Place,
+  RentalAgreement,
   Stop,
   VaultDocument,
   WeatherCard,
@@ -30,6 +31,7 @@ export interface EntityMap {
   vaultDocuments: VaultDocument;
   weatherCards: WeatherCard;
   photos: Photo;
+  rentals: RentalAgreement;
 }
 
 export type EntityName = keyof EntityMap;
@@ -48,6 +50,7 @@ export const ENTITY_NAMES: EntityName[] = [
   "vaultDocuments",
   "weatherCards",
   "photos",
+  "rentals",
 ];
 
 /** Entity name -> Supabase table name (snake_case). */
@@ -64,4 +67,5 @@ export const TABLE_NAMES: Record<EntityName, string> = {
   vaultDocuments: "vault_documents",
   weatherCards: "weather_cards",
   photos: "photos",
+  rentals: "rental_agreements",
 };

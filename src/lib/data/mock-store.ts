@@ -6,6 +6,7 @@ import {
   openDecisions as seedDecisions,
   people as seedPeople,
   places as seedPlaces,
+  rentals as seedRentals,
   trip as seedTrip,
   weatherCards as seedWeatherCards,
 } from "@/lib/seed/trip-seed";
@@ -34,6 +35,7 @@ function buildStore(): Store {
   for (const item of seedBudgetItems) store.budgetItems.set(item.id, item);
   for (const decision of seedDecisions) store.decisions.set(decision.id, decision);
   for (const card of seedWeatherCards) store.weatherCards.set(card.id, card);
+  for (const rental of seedRentals) store.rentals.set(rental.id, rental);
   // expenses, drivers, checklistItems, vaultDocuments, photos start empty.
 
   return store;

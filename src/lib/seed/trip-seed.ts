@@ -7,6 +7,7 @@ import type {
   OpenDecision,
   Person,
   Place,
+  RentalAgreement,
   Trip,
   WeatherCard,
 } from "@/lib/types";
@@ -635,6 +636,24 @@ export const budgetItems: BudgetItem[] = [
     priced: false,
     amount: null,
     notes: "The return journey is not included. There is no whole-trip total yet.",
+  },
+];
+
+// Car rental / one-way drop-off. This is a one-way draft: pick up in Arizona,
+// drop in San Francisco. Nothing is priced yet (per the itinerary); fields are
+// manually editable. Dates follow the trip window (checkout Jan 1).
+export const rentals: RentalAgreement[] = [
+  {
+    id: "rental-one-way",
+    company: "",
+    pickupLocation: "Tempe, AZ",
+    dropoffLocation: "San Francisco, CA",
+    pickupDate: "2025-12-27",
+    dropoffDate: "2026-01-01",
+    baseRate: null,
+    oneWayDropFee: null,
+    notes:
+      "One-way rental draft. Returning the car in San Francisco can avoid two nights of city parking; rental terms and drop fees are not priced yet.",
   },
 ];
 

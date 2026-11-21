@@ -172,3 +172,9 @@ insert into public.open_decisions (id, question, detail, resolved, resolution) v
   ('decision-budget', 'Set a whole-trip budget and identify any must-pay experiences.', null, false, null),
   ('decision-return-leg', 'Decide whether January 1 means flying home, driving back or continuing elsewhere.', null, false, null)
 on conflict (id) do nothing;
+
+-- ---------------------------------------------------------------------------
+-- Rental agreement (one-way draft; nothing priced yet)
+insert into public.rental_agreements (id, company, pickup_location, dropoff_location, pickup_date, dropoff_date, base_rate, one_way_drop_fee, notes) values
+  ('rental-one-way', '', 'Tempe, AZ', 'San Francisco, CA', '2025-12-27', '2026-01-01', null, null, 'One-way rental draft. Returning the car in San Francisco can avoid two nights of city parking; rental terms and drop fees are not priced yet.')
+on conflict (id) do nothing;

@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
+/* Warm theme tokens for the Arizona -> San Francisco trip.
+   CSS-first Tailwind v4 config: palette + typography scale exposed as
+   @theme variables so `bg-sand`, `text-ember`, `font-display` etc. work. */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Warm sand / canyon palette. */
+  --color-sand-50: #fdf8f2;
+  --color-sand-100: #f8eddd;
+  --color-sand-200: #f0dcc1;
+  --color-sand-300: #e6c59b;
+  --color-ember-400: #e8915b;
+  --color-ember-500: #dd6b35;
+  --color-ember-600: #c4531f;
+  --color-clay-700: #9a3f1a;
+  --color-ink-800: #43302b;
+  --color-ink-900: #2b1d19;
+
+  --background: var(--color-sand-50);
+  --foreground: var(--color-ink-900);
+  --surface: #ffffff;
+  --border: var(--color-sand-200);
+  --muted: #8a776e;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-border-warm: var(--border);
+  --color-muted: var(--muted);
+
+  --color-sand-50: var(--color-sand-50);
+  --color-sand-100: var(--color-sand-100);
+  --color-sand-200: var(--color-sand-200);
+  --color-sand-300: var(--color-sand-300);
+  --color-ember-400: var(--color-ember-400);
+  --color-ember-500: var(--color-ember-500);
+  --color-ember-600: var(--color-ember-600);
+  --color-clay-700: var(--color-clay-700);
+  --color-ink-800: var(--color-ink-800);
+  --color-ink-900: var(--color-ink-900);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Typography scale. */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
 }
