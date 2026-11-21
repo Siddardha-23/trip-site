@@ -58,3 +58,5 @@ npm run build
 - Never hardcode secrets; they are read from environment variables. `.env.local` is git-ignored; only `.env.local.example` (placeholders) is committed.
 
 See **[SETUP.md](./SETUP.md)** for exact Supabase, Maps, env and Vercel steps.
+
+<!-- auto-deploy link verified -->
