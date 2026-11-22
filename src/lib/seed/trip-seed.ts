@@ -31,7 +31,25 @@ export const places: Place[] = [
     lat: null,
     lng: null,
     category: "sightseeing",
-    description: "Breakfast and a short red-rock stop.",
+    description: "Red-rock sunrise and a relaxed breakfast stop.",
+  },
+  {
+    id: "oak-creek-vista",
+    name: "Oak Creek Vista Overlook",
+    city: "Oak Creek Canyon, AZ",
+    lat: null,
+    lng: null,
+    category: "viewpoint",
+    description: "Forest Service overlook at the top of the Oak Creek Canyon switchbacks on SR-89A.",
+  },
+  {
+    id: "williams",
+    name: "Williams",
+    city: "Williams, AZ",
+    lat: null,
+    lng: null,
+    category: "town",
+    description: "Historic Route 66 gateway town west of Flagstaff; Day 1 base and Route 66 lunch stop.",
   },
   {
     id: "south-rim",
@@ -86,6 +104,15 @@ export const places: Place[] = [
     description: "Grounds admission free; museums and parking can cost extra.",
   },
   {
+    id: "gaslamp-quarter",
+    name: "Gaslamp Quarter",
+    city: "San Diego, CA",
+    lat: null,
+    lng: null,
+    category: "neighborhood",
+    description: "Downtown San Diego's historic nightlife district; the Day 2 evening night out.",
+  },
+  {
     id: "griffith-observatory",
     name: "Griffith Observatory",
     city: "Los Angeles, CA",
@@ -102,6 +129,51 @@ export const places: Place[] = [
     lat: null,
     lng: null,
     category: "city",
+  },
+  {
+    id: "monterey",
+    name: "Monterey",
+    city: "Monterey, CA",
+    lat: 36.6002,
+    lng: -121.8947,
+    category: "city",
+    description: "Central Coast bay city; Day 4 overnight base and the start of the Big Sur drive.",
+  },
+  {
+    id: "cannery-row",
+    name: "Cannery Row",
+    city: "Monterey, CA",
+    lat: null,
+    lng: null,
+    category: "sightseeing",
+    description: "Historic waterfront street made famous by Steinbeck, near the Monterey Bay Aquarium.",
+  },
+  {
+    id: "carmel",
+    name: "Carmel-by-the-Sea",
+    city: "Carmel-by-the-Sea, CA",
+    lat: null,
+    lng: null,
+    category: "town",
+    description: "Storybook coastal village with a white-sand beach; a Pacific-sunset stop.",
+  },
+  {
+    id: "bixby-bridge",
+    name: "Bixby Creek Bridge",
+    city: "Big Sur, CA",
+    lat: null,
+    lng: null,
+    category: "viewpoint",
+    description: "Iconic arched Big Sur bridge over a coastal canyon on Highway 1.",
+  },
+  {
+    id: "mcway-falls",
+    name: "McWay Falls",
+    city: "Big Sur, CA",
+    lat: null,
+    lng: null,
+    category: "viewpoint",
+    description: "Tidefall onto a hidden cove beach in Julia Pfeiffer Burns State Park, Highway 1.",
   },
   {
     id: "san-francisco",
@@ -157,48 +229,86 @@ export const places: Place[] = [
 export const trip: Trip = {
   id: "az-to-sf-2025",
   title: "Arizona to San Francisco",
-  subtitle: "Dec 27-Jan 1 · 5 nights · 4 people",
+  subtitle: "Dec 27-Jan 1 · 5 nights · up to 6 people",
   startDate: "2026-12-27",
-  endDate: "2026-12-31", // last hotel night (2nd SF night)
+  endDate: "2026-12-31", // last hotel night (single SF night)
   checkoutDate: "2027-01-01",
   nights: 5,
   travelerCount: 4,
-  roomSetup: "1 room · 2 queen beds",
-  totalIntercityMiles: 1282, // "About 1,282 mi, plus local driving"
-  totalDrivingHours: 21.4, // "About 21.4 hr before heavy traffic and stops"
-  pace: "Fast; 5:30am starts, December 28 is a full driving day",
+  roomSetup: "2 budget rooms · up to 3 people each · 2 queen beds",
+  totalIntercityMiles: 1377, // Sum of all day legs: 270 + 504 + 128 + 335 + 140
+  totalDrivingHours: 26.5, // Sum of per-leg low-bound hours across all days
+  pace: "Fast; early starts, December 28 is a full 504-mi driving day, Big Sur driven in daylight",
   bookingStatus: "Nothing booked. This is a planning draft.",
-  overnightSummary: "South Rim 1 · San Diego 1 · Los Angeles 1 · San Francisco 2",
+  overnightSummary: "Williams 1 · San Diego 1 · Los Angeles 1 · Monterey 1 · San Francisco 1",
   days: [
     {
       id: "day-1",
       dayNumber: 1,
       date: "2026-12-27",
       weekday: "Sunday",
-      title: "Sedona to the Grand Canyon South Rim",
-      overnight: "South Rim or Tusayan",
+      title: "Red Rock to the Rim: Tempe → Sedona → Grand Canyon → Williams",
+      overnight: "Williams, AZ",
       summary:
-        "Tempe → Sedona → South Rim · About 4.5-5 hr · 270 mi. Early start preserves most of the day for the canyon.",
+        "Tempe → Sedona → Oak Creek Canyon → Flagstaff → Williams → Grand Canyon South Rim → back to Williams · About 5 hr driving · ~270 mi loop. A 5:30am start buys a red-rock sunrise, a Route 66 lunch and a canyon sunset in one day.",
       legs: [
         {
           id: "leg-1a",
           from: "Tempe",
           to: "Sedona",
-          miles: 125,
+          miles: 115,
           driveTime: "about 2 hr",
           driveTimeHoursLow: 2,
           driveTimeHoursHigh: 2,
           departTime: "5:30am",
-          notes: "Leave Tempe at 5:30am; preferred early-morning window.",
+          notes:
+            "Leave Tempe at 5:30am to reach Sedona around 7:15am for a red-rock sunrise.",
         },
         {
           id: "leg-1b",
           from: "Sedona",
-          to: "South Rim",
-          miles: 145,
-          driveTime: "about 2.5-3 hr",
-          driveTimeHoursLow: 2.5,
-          driveTimeHoursHigh: 3,
+          to: "Oak Creek Vista Overlook",
+          miles: 15,
+          driveTime: "about 30-45 min",
+          driveTimeHoursLow: 0.5,
+          driveTimeHoursHigh: 0.75,
+          departTime: "9:00am",
+          notes:
+            "Short climb up Oak Creek Canyon on SR-89A; aim for the Oak Creek Vista Overlook around 9:30am.",
+        },
+        {
+          id: "leg-1c",
+          from: "Oak Creek Vista Overlook",
+          to: "Williams",
+          miles: 45,
+          driveTime: "about 1 hr",
+          driveTimeHoursLow: 1,
+          driveTimeHoursHigh: 1,
+          notes:
+            "Continue to Flagstaff, fuel up there, then west on I-40 to Williams for a Route 66 lunch (11:30am-12:30pm).",
+        },
+        {
+          id: "leg-1d",
+          from: "Williams",
+          to: "Grand Canyon South Rim",
+          miles: 48,
+          driveTime: "about 1 hr",
+          driveTimeHoursLow: 1,
+          driveTimeHoursHigh: 1,
+          departTime: "12:30pm",
+          notes:
+            "North on SR-64 to reach the South Rim around 1:30pm, leaving the afternoon for the rim and sunset (~5pm).",
+        },
+        {
+          id: "leg-1e",
+          from: "Grand Canyon South Rim",
+          to: "Williams",
+          miles: 47,
+          driveTime: "about 1 hr",
+          driveTimeHoursLow: 1,
+          driveTimeHoursHigh: 1,
+          notes:
+            "After sunset, drive back to the Williams base for the night.",
         },
       ],
       stops: [
@@ -214,20 +324,38 @@ export const trip: Trip = {
         {
           id: "stop-1-sedona",
           placeId: "sedona",
-          name: "Sedona",
+          name: "Sedona sunrise and breakfast",
           kind: "meal",
-          time: "7:45-9:15am",
+          time: "7:15-9:00am",
           description:
-            "Have breakfast and take a short red-rock stop. The early start preserves most of the day for the canyon.",
+            "Reach Sedona around 7:15am. Catch the red rock in early light at Bell Rock & Courthouse Butte or the Airport Mesa Overlook, then a relaxed breakfast.",
+        },
+        {
+          id: "stop-1-oak-creek-vista",
+          placeId: "oak-creek-vista",
+          name: "Oak Creek Vista Overlook",
+          kind: "sightseeing",
+          time: "9:30am",
+          description:
+            "A short pull-off at the top of Oak Creek Canyon with a sweeping view back down the switchbacks.",
+        },
+        {
+          id: "stop-1-williams-lunch",
+          placeId: "williams",
+          name: "Route 66 lunch in Williams",
+          kind: "meal",
+          time: "11:30am-12:30pm",
+          description:
+            "Fuel in Flagstaff en route, then a Route 66 main-street lunch in Williams, the gateway town and tonight's base.",
         },
         {
           id: "stop-1-south-rim",
           placeId: "south-rim",
           name: "Grand Canyon South Rim",
           kind: "sightseeing",
-          time: "Around midday",
+          time: "1:30pm",
           description:
-            "Start at Mather Point, then walk an easy section of the Rim Trail. Add Hermit Road overlooks if daylight and road conditions allow.",
+            "Start at Mather Point, then walk an easy section of the Rim Trail past Yavapai Point. Add Hermit Road overlooks if daylight and road conditions allow.",
         },
         {
           id: "stop-1-mather",
@@ -242,26 +370,64 @@ export const trip: Trip = {
           kind: "activity",
         },
         {
+          id: "stop-1-sunset",
+          placeId: "south-rim",
+          name: "Canyon sunset",
+          kind: "sightseeing",
+          time: "~5:00pm",
+          description:
+            "Stay for sunset over the canyon before the drive back to Williams.",
+        },
+        {
           id: "stop-1-hermit",
           placeId: "hermit-road",
           name: "Hermit Road overlooks",
           kind: "flex",
           description: "If daylight and road conditions allow.",
         },
+        {
+          id: "stop-1-williams-night",
+          placeId: "williams",
+          name: "Back to Williams for the night",
+          kind: "checkin",
+          time: "Evening",
+          description:
+            "Return to the Williams base after sunset. Two budget motel rooms, about three people each.",
+        },
       ],
       notes: [
-        "Night: South Rim or Tusayan. Staying inside the park reduces driving; Tusayan is the closest outside-park base.",
+        "Night: Williams, AZ. Williams is the Route 66 gateway town west of Flagstaff; basing here keeps the loop tight and the lodging cheap.",
+        "Lodging: 2 budget motel rooms, about 3 people each, 2 queen beds per room, roughly $22-30 per person. Clean and safe over fancy — the group is mostly just sleeping.",
         "Park entry $35 per private vehicle, valid 7 days.",
+        "Winter gear: pack layers, water and snacks, and over-the-shoe traction for icy rim paths.",
+        "Fuel in Flagstaff before the canyon leg; recheck the forecast and roads 24-48 hours before driving.",
       ],
+      theme: {
+        key: "red-rock-to-rim",
+        name: "Red Rock to the Rim",
+        mood: "sunrise amber shifting to canyon rust",
+      },
       experiences: {
         feeling:
-          "This is the day the trip stops being a plan and becomes a feeling: red rock at sunrise, then standing at the edge of something a mile deep and older than you can hold in your head. Let the group go quiet here; some places earn the silence.",
+          "This is the day the trip stops being a plan and becomes a feeling: red rock at sunrise, a Route 66 lunch at midday, then standing at the edge of something a mile deep and older than you can hold in your head as the sun goes down. Let the group go quiet here; some places earn the silence.",
         viewpoints: [
+          {
+            title: "Bell Rock & Courthouse Butte, Sedona",
+            detail:
+              "Twin red-rock landmarks just south of the village, glowing in first light — an easy early stop before breakfast when the rock is amber and the crowds are thin.",
+            source: "https://en.wikipedia.org/wiki/Bell_Rock_(Arizona)",
+          },
           {
             title: "Airport Mesa Overlook, Sedona",
             detail:
-              "A short pull-off on the mesa with a 360° sweep of the red-rock buttes — best in early light before the breakfast stop, when the rock glows and the crowds are thin.",
+              "A short pull-off on the mesa with a 360° sweep of the red-rock buttes — best in early light before the breakfast stop.",
             source: "https://en.wikipedia.org/wiki/Sedona,_Arizona",
+          },
+          {
+            title: "Oak Creek Vista Overlook",
+            detail:
+              "At the top of the Oak Creek Canyon switchbacks on SR-89A, a Forest Service overlook frames the whole green canyon you just climbed out of.",
+            source: "https://en.wikipedia.org/wiki/Oak_Creek_Canyon",
           },
           {
             title: "Mather Point first look",
@@ -276,6 +442,12 @@ export const trip: Trip = {
               "A short walk west of Mather along the rim; the picture windows frame the canyon and the free museum explains the layers you are looking at, two billion years of rock stacked in plain sight.",
             source: "https://www.nps.gov/grca/planyourvisit/yavapai-point.htm",
           },
+          {
+            title: "Trail of Time, South Rim",
+            detail:
+              "A rim walk where every meter marks a million years of the canyon's history; walking it slowly turns the view into a story instead of a photo.",
+            source: "https://www.nps.gov/grca/planyourvisit/trail-of-time.htm",
+          },
         ],
         hiddenGems: [
           {
@@ -285,10 +457,10 @@ export const trip: Trip = {
             source: "https://en.wikipedia.org/wiki/Chapel_of_the_Holy_Cross_(Sedona,_Arizona)",
           },
           {
-            title: "Trail of Time, South Rim",
+            title: "Historic Route 66, Williams",
             detail:
-              "A rim walk where every meter marks a million years of the canyon's history; walking it slowly turns the view into a story instead of a photo.",
-            source: "https://www.nps.gov/grca/planyourvisit/trail-of-time.htm",
+              "Williams was the last Route 66 town bypassed by the interstate; its neon-lit main street still trades on that history and makes a fun, cheap base for the night.",
+            source: "https://en.wikipedia.org/wiki/Williams,_Arizona",
           },
         ],
         foodCulture: [
@@ -298,9 +470,10 @@ export const trip: Trip = {
               "Keep the Sedona stop to a relaxed sit-down breakfast rather than a rushed drive-through; the uptown cafes with patio red-rock views are the point of stopping here at all.",
           },
           {
-            title: "Pack a canyon picnic",
+            title: "Route 66 lunch in Williams",
             detail:
-              "Grab provisions before the rim — eating a simple lunch on a quiet overlook beats waiting for a crowded park cafe, and the view is free.",
+              "The old-highway diners and saloons along Williams' main street are the midday anchor of the loop — classic, cheap, and full of neon-sign nostalgia.",
+            source: "https://en.wikipedia.org/wiki/Williams,_Arizona",
           },
         ],
       },
@@ -313,11 +486,11 @@ export const trip: Trip = {
       title: "Grand Canyon to San Diego",
       overnight: "San Diego",
       summary:
-        "South Rim → San Diego · About 8.5-10 hr · 504 mi. The longest drive of the trip; a full driving day.",
+        "Grand Canyon South Rim → San Diego · About 8.5-10 hr · 504 mi. The longest drive of the trip; a full driving day that ends on the coast with a downtown / Gaslamp Quarter night out.",
       legs: [
         {
           id: "leg-2",
-          from: "South Rim",
+          from: "Grand Canyon South Rim",
           to: "San Diego",
           miles: 504,
           driveTime: "about 8.5-10 hr",
@@ -351,9 +524,18 @@ export const trip: Trip = {
           placeId: "san-diego",
           name: "San Diego",
           kind: "checkin",
-          time: "Mid-to-late afternoon",
+          time: "Evening arrival",
           description:
-            "Check in and keep the evening flexible. If the group has energy, choose a short Balboa Park walk or the waterfront, not a ticketed attraction.",
+            "Check in after the long drive, then head downtown. If the group has energy, the Gaslamp Quarter is the natural night out; otherwise a short waterfront or Balboa Park walk.",
+        },
+        {
+          id: "stop-2-gaslamp",
+          placeId: "gaslamp-quarter",
+          name: "Gaslamp Quarter (evening)",
+          kind: "activity",
+          time: "Evening",
+          description:
+            "Downtown's walkable, lively heart — Victorian-era blocks of restaurants and bars, a good reward after a full driving day.",
         },
         {
           id: "stop-2-balboa",
@@ -366,6 +548,11 @@ export const trip: Trip = {
       notes: [
         "Winter access: South Rim is open year-round, but snow and ice can temporarily close roads. Hermit Road normally opens to private vehicles under 22 feet from December through February, weather permitting. Stay on rim viewpoints rather than adding a below-rim hike to this short visit.",
       ],
+      theme: {
+        key: "canyon-to-coast",
+        name: "Canyon to the Coast",
+        mood: "desert tan shifting to Pacific blue",
+      },
       experiences: {
         feeling:
           "A long day behind the wheel earns a soft landing: the Pacific, salt air, and a city that moves at half the speed of the road you just drove. Don't over-plan the evening — let San Diego decompress the group.",
@@ -384,6 +571,12 @@ export const trip: Trip = {
           },
         ],
         hiddenGems: [
+          {
+            title: "Gaslamp Quarter at night",
+            detail:
+              "Sixteen walkable downtown blocks of restored Victorian buildings, now the city's nightlife core — the easiest place to land for a celebratory evening after the longest drive of the trip.",
+            source: "https://en.wikipedia.org/wiki/Gaslamp_Quarter,_San_Diego",
+          },
           {
             title: "Balboa Park after dark",
             detail:
@@ -415,7 +608,7 @@ export const trip: Trip = {
       title: "Early drive to Los Angeles",
       overnight: "Los Angeles",
       summary:
-        "San Diego → Griffith Observatory · About 2.5-4 hr · 128 mi.",
+        "Relaxed San Diego morning, then San Diego → Griffith Observatory · About 2.5-4 hr · 128 mi, timed to reach Griffith at dusk.",
       legs: [
         {
           id: "leg-3",
@@ -425,44 +618,50 @@ export const trip: Trip = {
           driveTime: "about 2.5-4 hr",
           driveTimeHoursLow: 2.5,
           driveTimeHoursHigh: 4,
-          departTime: "5:30am",
+          departTime: "Midday",
           notes:
-            "128-mile route measured 2 hr 19 min normally and 3 hr 49 min in the high-traffic estimate.",
+            "128-mile route measured 2 hr 19 min normally and 3 hr 49 min in the high-traffic estimate. Leave around midday so the drive lands at Griffith for golden hour.",
         },
       ],
       stops: [
+        {
+          id: "stop-3-morning",
+          placeId: "san-diego",
+          name: "Relaxed San Diego morning",
+          kind: "flex",
+          time: "Morning",
+          description:
+            "Keep the morning unhurried — a slow breakfast, the waterfront or Balboa Park — before the short drive north.",
+        },
         {
           id: "stop-3-depart",
           placeId: "san-diego",
           name: "Leave San Diego",
           kind: "departure",
-          time: "5:30am",
+          time: "Midday",
           description:
-            "The 128-mile route to Griffith Observatory measured 2 hr 19 min normally and 3 hr 49 min in the high-traffic estimate.",
-        },
-        {
-          id: "stop-3-morning",
-          name: "Hollywood or Santa Monica",
-          kind: "flex",
-          time: "Morning",
-          description:
-            "Choose one flexible stop while waiting for the Observatory to open. Keep bags secured and do not leave valuables visible in the car.",
+            "The 128-mile route to Griffith Observatory measured 2 hr 19 min normally and 3 hr 49 min in the high-traffic estimate. Time the drive to arrive at dusk.",
         },
         {
           id: "stop-3-griffith",
           placeId: "griffith-observatory",
-          name: "Griffith Observatory",
+          name: "Griffith Observatory at dusk",
           kind: "sightseeing",
-          time: "Noon-afternoon",
+          time: "Dusk",
           description:
-            "See the exhibits and the Hollywood Sign view. Regular Tuesday hours are noon to 10:00pm. Admission to the building is free; the closest parking is paid and planetarium tickets are separate.",
+            "See the exhibits and the Hollywood Sign view, then stay for blue hour over the LA basin. Regular Tuesday hours are noon to 10:00pm. Admission to the building is free; the closest parking is paid and planetarium tickets are separate.",
         },
       ],
       notes: [
-        "This early start trades a San Diego morning for more usable time in Los Angeles. If Balboa Park is a priority, keep it on the previous afternoon or move this drive back to early afternoon.",
-        "Protect this driving day: keep the 5:30am start and avoid adding Route 66 or Joshua Tree detours. Rotate only between listed, rested drivers. If nobody wants a drive this long, this is the first leg to replace with a flight or split with an extra night.",
+        "A relaxed San Diego morning, then a drive timed so Griffith Observatory lands at dusk. If Balboa Park is a priority, keep it on the previous afternoon or this morning.",
+        "Protect this driving day: avoid adding Route 66 or Joshua Tree detours. Rotate only between listed, rested drivers. If nobody wants a drive this long, this is the first leg to replace with a flight or split with an extra night.",
         "Night: Los Angeles. A Hollywood base fits this stop.",
       ],
+      theme: {
+        key: "city-of-angels",
+        name: "City of Angels",
+        mood: "golden-hour dusk",
+      },
       experiences: {
         feeling:
           "LA rewards the group that treats it as a view rather than a checklist. From Griffith, the whole basin spreads out to the ocean at dusk — city lights coming on, the sign on the hill, that specific feeling of having arrived in the myth of the place.",
@@ -514,22 +713,22 @@ export const trip: Trip = {
       dayNumber: 4,
       date: "2026-12-30",
       weekday: "Wednesday",
-      title: "Los Angeles to San Francisco",
-      overnight: "San Francisco",
+      title: "The Pacific Turn: Los Angeles to Monterey & Carmel",
+      overnight: "Monterey / Carmel, CA",
       summary:
-        "Los Angeles → San Francisco via I-5 · About 6-7.5 hr · 380 mi.",
+        "Los Angeles → Monterey / Carmel via US-101 · About 5.5-6 hr · ~335 mi (estimate). Trade the freeway for the Central Coast and a Pacific sunset. Nothing booked — a scenic coastal overnight.",
       legs: [
         {
           id: "leg-4",
           from: "Los Angeles",
-          to: "San Francisco",
-          miles: 380,
-          driveTime: "about 6-7.5 hr",
-          driveTimeHoursLow: 6,
-          driveTimeHoursHigh: 7.5,
-          departTime: "5:30am",
+          to: "Monterey / Carmel",
+          miles: 335,
+          driveTime: "about 5.5-6 hr",
+          driveTimeHoursLow: 5.5,
+          driveTimeHoursHigh: 6,
+          departTime: "Morning",
           notes:
-            "Use I-5 for this five-night version. The 380-mile route measured 6 hr normally and 7 hr 20 min in the high-traffic estimate, before a meal stop.",
+            "Estimate, not a transcribed exact figure: US-101 from Los Angeles to the Monterey Peninsula is roughly 330-345 mi and about 5.5-6 hr before stops. Recheck before booking.",
         },
       ],
       stops: [
@@ -538,75 +737,84 @@ export const trip: Trip = {
           placeId: "los-angeles",
           name: "Leave Los Angeles",
           kind: "departure",
-          time: "5:30am",
-          description: "Use I-5 for this five-night version.",
-        },
-        {
-          id: "stop-4-arrive",
-          placeId: "san-francisco",
-          name: "Arrive in San Francisco",
-          kind: "checkin",
-          time: "Midday-to-early afternoon",
+          time: "Morning",
           description:
-            "Check in for two nights. If this is a one-way rental, returning it here can avoid two nights of city parking; rental terms and drop fees are not priced yet.",
+            "Head up US-101 toward the Central Coast, leaving time for a Pacific sunset in Monterey or Carmel.",
         },
         {
-          id: "stop-4-golden-gate",
-          placeId: "golden-gate",
-          name: "Golden Gate Bridge",
+          id: "stop-4-cannery-row",
+          placeId: "cannery-row",
+          name: "Cannery Row, Monterey",
+          kind: "sightseeing",
+          time: "Afternoon",
+          description:
+            "The waterfront street made famous by Steinbeck, now a walkable stretch of the bay with the aquarium nearby.",
+        },
+        {
+          id: "stop-4-carmel",
+          placeId: "carmel",
+          name: "Carmel-by-the-Sea",
           kind: "sightseeing",
           time: "Late afternoon",
           description:
-            "Choose the Golden Gate Bridge and Palace of Fine Arts if visibility is good. Otherwise use the Ferry Building and Embarcadero.",
+            "A storybook coastal village of cottages and galleries with a white-sand beach — a gentle place to end the drive.",
         },
         {
-          id: "stop-4-palace",
-          placeId: "palace-of-fine-arts",
-          name: "Palace of Fine Arts",
+          id: "stop-4-sunset",
+          placeId: "carmel",
+          name: "Pacific sunset",
           kind: "sightseeing",
-          time: "Late afternoon",
+          time: "Sunset",
+          description:
+            "Catch sunset over the water from Carmel Beach or the Monterey shoreline before dinner.",
         },
       ],
       notes: [
-        "If this is a one-way rental, returning it in SF can avoid two nights of city parking; rental terms and drop fees are not priced yet.",
+        "Night: Monterey / Carmel. A scenic coastal overnight — nothing booked.",
+        "The LA → Monterey distance and drive-time are an estimate (US-101 ~330-345 mi, ~5.5-6 hr), not a transcribed exact figure. Recheck before booking.",
       ],
+      theme: {
+        key: "pacific-turn",
+        name: "The Pacific Turn",
+        mood: "coastal fog / teal",
+      },
       experiences: {
         feeling:
-          "The last long drive ends at the edge of the continent. Timing the arrival for late-afternoon light at the Golden Gate — if the fog cooperates — gives the group a shared 'we made it' moment that the whole trip has been building toward.",
+          "This is where the trip leaves the freeway behind and turns to the sea. Cannery Row, a storybook village, and a Pacific sunset — a slower, salt-air evening that sets up the Big Sur drive to come.",
         viewpoints: [
           {
-            title: "Battery Spencer, Marin side",
+            title: "Cannery Row waterfront, Monterey",
             detail:
-              "Just north of the bridge, this old gun battery frames the towers against the city skyline — the definitive Golden Gate view, and free. Weather and fog permitting.",
-            source: "https://en.wikipedia.org/wiki/Golden_Gate_Bridge",
+              "The old sardine-cannery street along the bay, immortalized by Steinbeck, now a strollable waterfront with the Monterey Bay Aquarium at its end.",
+            source: "https://en.wikipedia.org/wiki/Cannery_Row",
           },
           {
-            title: "Palace of Fine Arts lagoon",
+            title: "Carmel Beach at sunset",
             detail:
-              "A surviving 1915 exposition rotunda reflected in a still lagoon; calm, grand, and a gentle contrast to a day of freeway after the bridge.",
-            source: "https://en.wikipedia.org/wiki/Palace_of_Fine_Arts",
+              "A crescent of white sand below the village of Carmel-by-the-Sea, facing straight west — one of the better free sunset perches on the coast.",
+            source: "https://en.wikipedia.org/wiki/Carmel-by-the-Sea,_California",
           },
         ],
         hiddenGems: [
           {
-            title: "Fort Point under the bridge",
+            title: "Carmel-by-the-Sea village",
             detail:
-              "A Civil War-era brick fort directly beneath the south anchorage; standing under the roaring span is a very different feeling from seeing it from afar.",
-            source: "https://www.nps.gov/fopo/index.htm",
+              "A one-square-mile town of fairytale cottages, hidden courtyards and galleries, with no street addresses — made for an unhurried evening wander.",
+            source: "https://en.wikipedia.org/wiki/Carmel-by-the-Sea,_California",
           },
           {
-            title: "The Embarcadero walk",
+            title: "Monterey State Historic Park",
             detail:
-              "If the bridge is fogged in, the waterfront promenade from the Ferry Building toward the bridge is a reliable, beautiful plan B with open bay views.",
-            source: "https://en.wikipedia.org/wiki/The_Embarcadero_(San_Francisco)",
+              "Adobe buildings from California's Spanish and Mexican eras, walkable in the old town — a quiet counterpoint to the bustle of Cannery Row.",
+            source: "https://en.wikipedia.org/wiki/Monterey,_California",
           },
         ],
         foodCulture: [
           {
-            title: "Ferry Building Marketplace",
+            title: "Monterey Bay seafood",
             detail:
-              "A restored ferry terminal turned food hall of Northern California makers — a perfect low-key arrival dinner showcasing the region's produce and coffee culture.",
-            source: "https://en.wikipedia.org/wiki/San_Francisco_Ferry_Building",
+              "The bay's fishing heritage still shows up on the plate — clam chowder and fresh catch along Cannery Row and Fisherman's Wharf make an easy coastal dinner.",
+            source: "https://en.wikipedia.org/wiki/Monterey,_California",
           },
         ],
       },
@@ -616,36 +824,68 @@ export const trip: Trip = {
       dayNumber: 5,
       date: "2026-12-31",
       weekday: "Thursday",
-      title: "A full San Francisco day",
-      overnight: "San Francisco (2nd night)",
+      title: "Big Sur & Midnight: Monterey → Highway 1 → San Francisco NYE",
+      overnight: "San Francisco, CA",
       summary:
-        "A full city day and a flexible New Year's Eve. 2nd SF night in the same hotel.",
-      legs: [],
+        "Monterey → Big Sur / Highway 1 (driven in full daylight) → San Francisco by evening, then a flexible New Year's Eve. One SF night.",
+      legs: [
+        {
+          id: "leg-5",
+          from: "Monterey",
+          to: "San Francisco (via Big Sur / Hwy 1)",
+          miles: 140,
+          driveTime: "a slow full-daylight day, several hours with stops",
+          driveTimeHoursLow: 4.5,
+          driveTimeHoursHigh: 6,
+          departTime: "Early morning",
+          notes:
+            "Estimate, not a transcribed exact figure: the Monterey → Big Sur → San Francisco coastal routing is only about 140 mi but is a slow, winding full-day drive with many stops. Drive Big Sur in full daylight. Highway 1 is prone to seasonal and storm closures — check Caltrans/NPS status before relying on the coast route, and have the US-101 inland alternative ready.",
+        },
+      ],
       stops: [
         {
-          id: "stop-5-ferry",
-          placeId: "ferry-building",
-          name: "Ferry Building and Embarcadero",
+          id: "stop-5-depart",
+          placeId: "monterey",
+          name: "Leave Monterey early",
+          kind: "departure",
+          time: "Early morning",
+          description:
+            "Start early to drive Big Sur in full daylight and still reach San Francisco by evening.",
+        },
+        {
+          id: "stop-5-bixby",
+          placeId: "bixby-bridge",
+          name: "Bixby Creek Bridge",
           kind: "sightseeing",
           time: "Morning",
           description:
-            "Keep the first morning unhurried after three consecutive intercity drives.",
+            "The iconic arched span over a coastal canyon — the signature Big Sur photo stop.",
         },
         {
-          id: "stop-5-chinatown",
-          placeId: "chinatown",
-          name: "Chinatown",
-          kind: "activity",
+          id: "stop-5-mcway",
+          placeId: "mcway-falls",
+          name: "McWay Falls",
+          kind: "sightseeing",
+          time: "Midday",
+          description:
+            "An 80-foot waterfall dropping onto a cove beach in Julia Pfeiffer Burns State Park, viewed from a short overlook trail.",
+        },
+        {
+          id: "stop-5-overlooks",
+          name: "Big Sur coastal overlooks",
+          kind: "flex",
           time: "Afternoon",
           description:
-            "Use the compact Chinatown + North Beach pairing for food, walking and city views. If Golden Gate was fogged out the day before, make that the afternoon priority instead.",
+            "Pull off at the cliff-edge turnouts along Highway 1 as time and daylight allow.",
         },
         {
-          id: "stop-5-north-beach",
-          placeId: "north-beach",
-          name: "North Beach",
-          kind: "activity",
-          time: "Afternoon",
+          id: "stop-5-arrive-sf",
+          placeId: "san-francisco",
+          name: "Arrive in San Francisco",
+          kind: "checkin",
+          time: "Evening",
+          description:
+            "Reach the city by evening and check in for the single SF night. If this is a one-way rental, returning it here can avoid city parking; rental terms and drop fees are not priced yet.",
         },
         {
           id: "stop-5-nye",
@@ -657,13 +897,30 @@ export const trip: Trip = {
         },
       ],
       notes: [
-        "Night: second night in San Francisco. Staying in the same hotel avoids a New Year's Day checkout move.",
-        "No Big Sur detour in this version. Highway 1 is not part of the timed route; adding the coast would need a different pace or another night.",
+        "Night: San Francisco (single night). This is the last hotel night before the January 1 checkout.",
+        "Drive Big Sur / Highway 1 in full daylight. The coast road is prone to seasonal and storm-related closures — check Caltrans and NPS status before relying on it, and keep the US-101 inland route as a backup.",
       ],
+      theme: {
+        key: "big-sur-midnight",
+        name: "Big Sur & Midnight",
+        mood: "cliff greens into NYE gold/navy",
+      },
       experiences: {
         feeling:
-          "The last full day, and New Year's Eve — the trip's emotional finish line. However the group rings in 2027, the point is that you do it together, somewhere that feels like the city. Keep the plan loose enough that the night can become whatever the group needs it to be.",
+          "The last full day, and New Year's Eve — the trip's emotional finish line. A morning of Big Sur cliffs gives way to the city by night; however the group rings in 2027, the point is that you do it together, somewhere that feels like the city. Keep the plan loose enough that the night can become whatever the group needs it to be.",
         viewpoints: [
+          {
+            title: "Bixby Creek Bridge, Big Sur",
+            detail:
+              "One of the most photographed bridges on the California coast, its concrete arch spanning a deep canyon with the Pacific beyond — the classic Big Sur morning stop.",
+            source: "https://en.wikipedia.org/wiki/Bixby_Creek_Bridge",
+          },
+          {
+            title: "McWay Falls, Julia Pfeiffer Burns State Park",
+            detail:
+              "A tidefall that drops straight onto a hidden cove beach; a short, level overlook trail delivers one of the coast's most unreal views.",
+            source: "https://en.wikipedia.org/wiki/McWay_Falls",
+          },
           {
             title: "Twin Peaks at night",
             detail:
@@ -917,7 +1174,7 @@ export const rentals: RentalAgreement[] = [
     baseRate: null,
     oneWayDropFee: null,
     notes:
-      "One-way rental draft. Returning the car in San Francisco can avoid two nights of city parking; rental terms and drop fees are not priced yet.",
+      "One-way rental draft. Returning the car in San Francisco can avoid city parking on the final night; rental terms and drop fees are not priced yet.",
   },
 ];
 
@@ -1029,16 +1286,37 @@ export const photos: Photo[] = [
   {
     id: "photo-sedona",
     url: null,
-    caption: "Red-rock morning stop in Sedona",
+    caption: "Red-rock sunrise in Sedona",
     dayId: "day-1",
     placeId: "sedona",
   },
   {
+    id: "photo-oak-creek-vista",
+    url: null,
+    caption: "Oak Creek Vista Overlook, top of the canyon switchbacks",
+    dayId: "day-1",
+    placeId: "oak-creek-vista",
+  },
+  {
+    id: "photo-williams",
+    url: null,
+    caption: "Route 66 main street in Williams",
+    dayId: "day-1",
+    placeId: "williams",
+  },
+  {
     id: "photo-south-rim",
     url: null,
-    caption: "First look at the canyon from Mather Point",
+    caption: "Canyon sunset from the South Rim",
     dayId: "day-1",
     placeId: "mather-point",
+  },
+  {
+    id: "photo-gaslamp",
+    url: null,
+    caption: "Gaslamp Quarter night out, San Diego",
+    dayId: "day-2",
+    placeId: "gaslamp-quarter",
   },
   {
     id: "photo-balboa",
@@ -1050,22 +1328,43 @@ export const photos: Photo[] = [
   {
     id: "photo-griffith",
     url: null,
-    caption: "Griffith Observatory and the Hollywood Sign view",
+    caption: "Griffith Observatory and the Hollywood Sign view at dusk",
     dayId: "day-3",
     placeId: "griffith-observatory",
+  },
+  {
+    id: "photo-cannery-row",
+    url: null,
+    caption: "Cannery Row waterfront, Monterey",
+    dayId: "day-4",
+    placeId: "cannery-row",
+  },
+  {
+    id: "photo-carmel",
+    url: null,
+    caption: "Pacific sunset at Carmel-by-the-Sea",
+    dayId: "day-4",
+    placeId: "carmel",
+  },
+  {
+    id: "photo-bixby-bridge",
+    url: null,
+    caption: "Bixby Creek Bridge on Big Sur's Highway 1",
+    dayId: "day-5",
+    placeId: "bixby-bridge",
+  },
+  {
+    id: "photo-mcway-falls",
+    url: null,
+    caption: "McWay Falls dropping onto its hidden cove",
+    dayId: "day-5",
+    placeId: "mcway-falls",
   },
   {
     id: "photo-golden-gate",
     url: null,
     caption: "Golden Gate Bridge on arrival in San Francisco",
-    dayId: "day-4",
-    placeId: "golden-gate",
-  },
-  {
-    id: "photo-ferry-building",
-    url: null,
-    caption: "Ferry Building and the Embarcadero",
     dayId: "day-5",
-    placeId: "ferry-building",
+    placeId: "golden-gate",
   },
 ];

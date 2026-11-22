@@ -56,6 +56,20 @@ export interface DayExperiences {
   nye?: NyeGuidance[];
 }
 
+/**
+ * A per-day visual/emotional theme. `key` is a stable slug the UI theme-token
+ * map keys off; it does not carry planning figures. Stored only in the TS seed
+ * (there is no DB column for it), so it is optional/additive.
+ */
+export interface DayTheme {
+  /** Stable slug, e.g. "red-rock-to-rim". */
+  key: string;
+  /** Display theme name, e.g. "Red Rock to the Rim". */
+  name: string;
+  /** Short emotional/visual descriptor, e.g. "sunrise amber shifting to canyon rust". */
+  mood: string;
+}
+
 /** One day of the itinerary. */
 export interface Day {
   id: string;
@@ -74,6 +88,8 @@ export interface Day {
   notes: string[];
   /** EXPERIENTIAL SUGGESTIONS — soulful, non-factual-figure content; optional. */
   experiences?: DayExperiences;
+  /** Per-day visual/emotional theme for the UI; optional/additive. */
+  theme?: DayTheme;
 }
 
 /** A driving leg between two places. */
@@ -238,4 +254,9 @@ export interface Photo {
   dayId?: string;
   placeId?: string;
   uploadedById?: string;
+  /**
+   * Attribution / licensing note for any real imagery wired later
+   * (Wikimedia Commons / Unsplash). Optional; placeholders leave it unset.
+   */
+  source?: string;
 }
