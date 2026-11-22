@@ -95,7 +95,7 @@ export function RouteArc() {
     <section>
       <SectionHeader
         title="The whole trip, in order"
-        subtitle="Six days of driving, from Arizona red rocks to the Big Sur coast and San Francisco. Tap any stop for that day."
+        subtitle="Six nights, from Arizona red rocks to the Big Sur coast and two nights in San Francisco. Tap any stop for that day."
       />
       <ol className="flex flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-0 sm:overflow-x-auto sm:pb-2">
         {stops.map((stop, i) => {

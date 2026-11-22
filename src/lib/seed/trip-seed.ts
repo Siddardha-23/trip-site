@@ -131,6 +131,34 @@ export const places: Place[] = [
     category: "city",
   },
   {
+    id: "getty-center",
+    name: "The Getty Center",
+    city: "Los Angeles, CA",
+    lat: null,
+    lng: null,
+    category: "sightseeing",
+    description:
+      "Hilltop art museum with gardens and basin-to-ocean views. Admission free; parking paid.",
+  },
+  {
+    id: "santa-monica-pier",
+    name: "Santa Monica Pier",
+    city: "Santa Monica, CA",
+    lat: null,
+    lng: null,
+    category: "sightseeing",
+    description: "Historic 1909 pier marking the Pacific end of Route 66.",
+  },
+  {
+    id: "venice-beach",
+    name: "Venice Beach boardwalk",
+    city: "Venice, Los Angeles, CA",
+    lat: null,
+    lng: null,
+    category: "neighborhood",
+    description: "The Ocean Front Walk: muscle beach, skate park, murals and vendors.",
+  },
+  {
     id: "monterey",
     name: "Monterey",
     city: "Monterey, CA",
@@ -200,6 +228,42 @@ export const places: Place[] = [
     category: "sightseeing",
   },
   {
+    id: "lands-end",
+    name: "Lands End & Sutro Baths",
+    city: "San Francisco, CA",
+    lat: null,
+    lng: null,
+    category: "trail",
+    description: "Headland trail through cypress to the ruins of the Sutro Baths.",
+  },
+  {
+    id: "alamo-square",
+    name: "Painted Ladies, Alamo Square",
+    city: "San Francisco, CA",
+    lat: null,
+    lng: null,
+    category: "sightseeing",
+    description: "The row of Victorian houses framed by the downtown skyline.",
+  },
+  {
+    id: "twin-peaks",
+    name: "Twin Peaks",
+    city: "San Francisco, CA",
+    lat: null,
+    lng: null,
+    category: "viewpoint",
+    description: "The highest easy viewpoint in the city; 360° panorama over the bay.",
+  },
+  {
+    id: "coit-tower",
+    name: "Coit Tower",
+    city: "San Francisco, CA",
+    lat: null,
+    lng: null,
+    category: "sightseeing",
+    description: "Telegraph Hill landmark reached by the Filbert Street garden steps.",
+  },
+  {
     id: "ferry-building",
     name: "Ferry Building",
     city: "San Francisco, CA",
@@ -229,24 +293,24 @@ export const places: Place[] = [
 export const trip: Trip = {
   id: "az-to-sf-2025",
   title: "Arizona to San Francisco",
-  subtitle: "Dec 27-Jan 1 · 5 nights · up to 6 people",
-  startDate: "2026-12-27",
-  endDate: "2026-12-31", // last hotel night (single SF night)
+  subtitle: "Dec 26-Jan 1 · 6 nights · up to 6 people",
+  startDate: "2026-12-26",
+  endDate: "2026-12-31", // last hotel night (second SF night / New Year's Eve)
   checkoutDate: "2027-01-01",
-  nights: 5,
+  nights: 6,
   travelerCount: 4,
   roomSetup: "2 budget rooms · up to 3 people each · 2 queen beds",
-  totalIntercityMiles: 1377, // Sum of all day legs: 270 + 504 + 128 + 335 + 140
+  totalIntercityMiles: 1377, // Sum of all intercity legs: 270 + 504 + 128 + 335 + 140 (the extra SF night adds no intercity miles)
   totalDrivingHours: 26.5, // Sum of per-leg low-bound hours across all days
-  pace: "Fast; early starts, December 28 is a full 504-mi driving day, Big Sur driven in daylight",
+  pace: "Fast; early starts, December 27 is a full 504-mi driving day, Big Sur driven in daylight",
   bookingStatus: "Nothing booked. This is a planning draft.",
-  overnightSummary: "Williams 1 · San Diego 1 · Los Angeles 1 · Monterey 1 · San Francisco 1",
+  overnightSummary: "Williams 1 · San Diego 1 · Los Angeles 1 · Monterey 1 · San Francisco 2",
   days: [
     {
       id: "day-1",
       dayNumber: 1,
-      date: "2026-12-27",
-      weekday: "Sunday",
+      date: "2026-12-26",
+      weekday: "Saturday",
       title: "Red Rock to the Rim: Tempe → Sedona → Grand Canyon → Williams",
       overnight: "Williams, AZ",
       summary:
@@ -486,8 +550,8 @@ export const trip: Trip = {
     {
       id: "day-2",
       dayNumber: 2,
-      date: "2026-12-28",
-      weekday: "Monday",
+      date: "2026-12-27",
+      weekday: "Sunday",
       title: "Grand Canyon to San Diego",
       overnight: "San Diego",
       summary:
@@ -613,8 +677,8 @@ export const trip: Trip = {
     {
       id: "day-3",
       dayNumber: 3,
-      date: "2026-12-29",
-      weekday: "Tuesday",
+      date: "2026-12-28",
+      weekday: "Monday",
       title: "Early drive to Los Angeles",
       overnight: "Los Angeles",
       summary:
@@ -688,10 +752,22 @@ export const trip: Trip = {
             source: "https://en.wikipedia.org/wiki/Griffith_Observatory",
           },
           {
-            title: "Griffith Park trails",
+            title: "The Getty Center",
             detail:
-              "The surrounding park is one of the largest urban wildernesses in North America; even a short walk up toward the sign trades the parking-lot crowd for quiet ridgeline views.",
-            source: "https://en.wikipedia.org/wiki/Griffith_Park",
+              "A hilltop art museum above the 405 with gardens, travertine pavilions and a sweeping view across the basin to the ocean. Admission is free; you pay only for parking, and a tram carries you up from the lot.",
+            source: "https://en.wikipedia.org/wiki/Getty_Center",
+          },
+          {
+            title: "Griffith Park trails & Mulholland overlook",
+            detail:
+              "The surrounding park is one of the largest urban wildernesses in North America; a short walk up toward the sign, or a pull-off along Mulholland Drive, trades the parking-lot crowd for quiet ridgeline views over the city and valley.",
+            source: "https://en.wikipedia.org/wiki/Mulholland_Drive",
+          },
+          {
+            title: "Santa Monica Pier & the end of Route 66",
+            detail:
+              "The 1909 pier marks the Pacific end of Route 66 — a fitting coastal bookend to the Williams lunch stop days earlier. Ferris wheel, arcade and ocean, best in late-afternoon light.",
+            source: "https://en.wikipedia.org/wiki/Santa_Monica_Pier",
           },
         ],
         hiddenGems: [
@@ -702,10 +778,16 @@ export const trip: Trip = {
             source: "https://en.wikipedia.org/wiki/The_Last_Bookstore",
           },
           {
-            title: "Santa Monica Pier at golden hour",
+            title: "Venice Beach boardwalk",
             detail:
-              "If the flexible morning goes coastal instead, the pier and the end of Route 66 carry a nostalgic, carnival-light charm that photographs beautifully late in the day.",
-            source: "https://en.wikipedia.org/wiki/Santa_Monica_Pier",
+              "The Ocean Front Walk just south of Santa Monica is pure LA street theatre — muscle beach, skate park, murals and vendors — a free, lively stroll if the group wants the coast over the hills.",
+            source: "https://en.wikipedia.org/wiki/Venice,_Los_Angeles",
+          },
+          {
+            title: "Hollywood Boulevard & the Walk of Fame (optional icon stop)",
+            detail:
+              "An optional quick tick of the LA myth: the brass stars, the TCL Chinese Theatre forecourt and the Hollywood Sign framed up the hill. Touristy and crowded, so treat it as a photo stop rather than an afternoon.",
+            source: "https://en.wikipedia.org/wiki/Hollywood_Walk_of_Fame",
           },
         ],
         foodCulture: [
@@ -726,8 +808,8 @@ export const trip: Trip = {
     {
       id: "day-4",
       dayNumber: 4,
-      date: "2026-12-30",
-      weekday: "Wednesday",
+      date: "2026-12-29",
+      weekday: "Tuesday",
       title: "The Pacific Turn: Los Angeles to Monterey & Carmel",
       overnight: "Monterey / Carmel, CA",
       summary:
@@ -842,12 +924,12 @@ export const trip: Trip = {
     {
       id: "day-5",
       dayNumber: 5,
-      date: "2026-12-31",
-      weekday: "Thursday",
-      title: "Big Sur & Midnight: Monterey → Highway 1 → San Francisco NYE",
+      date: "2026-12-30",
+      weekday: "Wednesday",
+      title: "Big Sur to the City: Monterey → Highway 1 → San Francisco",
       overnight: "San Francisco, CA",
       summary:
-        "Monterey → Big Sur / Highway 1 (driven in full daylight) → San Francisco by evening, then a flexible New Year's Eve. One SF night.",
+        "Monterey → Big Sur / Highway 1 (driven in full daylight) → San Francisco by evening. Arrive for the first of two SF nights and take a gentle first look at the city.",
       legs: [
         {
           id: "leg-5",
@@ -905,19 +987,20 @@ export const trip: Trip = {
           kind: "checkin",
           time: "Evening",
           description:
-            "Reach the city by evening and check in for the single SF night. If this is a one-way rental, returning it here can avoid city parking; rental terms and drop fees are not priced yet.",
+            "Reach the city by evening and check in for the first of two SF nights. If this is a one-way rental, returning it here can avoid city parking; rental terms and drop fees are not priced yet.",
         },
         {
-          id: "stop-5-nye",
-          name: "Flexible New Year's Eve",
+          id: "stop-5-first-look",
+          placeId: "ferry-building",
+          name: "A gentle first look at the city",
           kind: "flex",
           time: "Evening",
           description:
-            "Keep dinner and late plans adjustable until official 2027 event details are published.",
+            "After a full day on the coast, keep the first evening easy: a stroll along the Ferry Building and Embarcadero, or the Golden Gate at dusk if there is still light. The full San Francisco day comes tomorrow.",
         },
       ],
       notes: [
-        "Night: San Francisco (single night). This is the last hotel night before the January 1 checkout.",
+        "Night: San Francisco (first of two SF nights). Tomorrow is a full settled SF day and New Year's Eve before the January 1 checkout.",
         "Drive Big Sur / Highway 1 in full daylight. The coast road is prone to seasonal and storm-related closures — check Caltrans and NPS status before relying on it, and keep the US-101 inland route as a backup.",
       ],
       heroImage: {
@@ -926,13 +1009,13 @@ export const trip: Trip = {
           "Frank Schulenburg / Wikimedia Commons / CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Golden_Gate_Bridge_as_seen_from_Marshall%E2%80%99s_Beach,_March_2018.jpg",
       },
       theme: {
-        key: "big-sur-midnight",
-        name: "Big Sur & Midnight",
-        mood: "cliff greens into NYE gold/navy",
+        key: "big-sur-to-city",
+        name: "Big Sur to the City",
+        mood: "cliff greens into a Pacific-blue arrival",
       },
       experiences: {
         feeling:
-          "The last full day, and New Year's Eve — the trip's emotional finish line. A morning of Big Sur cliffs gives way to the city by night; however the group rings in 2027, the point is that you do it together, somewhere that feels like the city. Keep the plan loose enough that the night can become whatever the group needs it to be.",
+          "The coast road, driven slowly in daylight, is the quiet heart of the trip: Bixby Bridge, McWay Falls, and turnout after turnout of open Pacific. By evening the cliffs give way to the city — a soft landing before tomorrow's full San Francisco day. Let this one breathe; you have earned a slow arrival.",
         viewpoints: [
           {
             title: "Bixby Creek Bridge, Big Sur",
@@ -947,37 +1030,190 @@ export const trip: Trip = {
             source: "https://en.wikipedia.org/wiki/McWay_Falls",
           },
           {
-            title: "Twin Peaks at night",
+            title: "Big Sur coastal turnouts",
             detail:
-              "The highest easy viewpoint in the city, with the whole grid of lights laid out below — a quieter place to watch midnight than the packed waterfront, if the group wants calm over crowds.",
+              "Between the headline stops, Highway 1 is lined with cliff-edge pull-offs over the open Pacific. Stop often while there is daylight — the drive itself is the attraction.",
+            source: "https://en.wikipedia.org/wiki/Big_Sur",
+          },
+          {
+            title: "Ferry Building & Embarcadero at dusk",
+            detail:
+              "A gentle first taste of the city on arrival: the lit clock tower and the bay-front promenade, an easy evening walk after a long day on the road.",
+            source: "https://en.wikipedia.org/wiki/San_Francisco_Ferry_Building",
+          },
+        ],
+        hiddenGems: [
+          {
+            title: "Point Lobos State Natural Reserve",
+            detail:
+              "Just south of Carmel at the start of the drive, a reserve of coves, cypress and sea otters — an easy early leg-stretch before the cliffs begin.",
+            source: "https://en.wikipedia.org/wiki/Point_Lobos",
+          },
+          {
+            title: "Pfeiffer Beach, Big Sur",
+            detail:
+              "Down a narrow, easy-to-miss side road, a beach with purple-tinged sand and a sea-arch the sun shines through late in the day — worth the detour if time allows.",
+            source: "https://en.wikipedia.org/wiki/Pfeiffer_Beach",
+          },
+        ],
+        foodCulture: [
+          {
+            title: "A Big Sur roadhouse lunch",
+            detail:
+              "The handful of lodges and cafes along Highway 1 are the only food for miles — plan a midday stop rather than assuming a town is around the next bend.",
+            source: "https://en.wikipedia.org/wiki/Big_Sur",
+          },
+          {
+            title: "An easy first SF dinner",
+            detail:
+              "Keep the arrival evening low-key: something near the hotel or along the Embarcadero. Save the big neighborhood meal for the full city day tomorrow.",
+          },
+        ],
+      },
+    },
+    {
+      id: "day-sf-full",
+      dayNumber: 6,
+      date: "2026-12-31",
+      weekday: "Thursday",
+      title: "San Francisco & Midnight: a full city day, then New Year's Eve",
+      overnight: "San Francisco, CA",
+      summary:
+        "A full settled day across San Francisco — Golden Gate viewpoints, the Presidio and Lands End, the Palace of Fine Arts, Alamo Square, the hilltop overlooks and historic neighborhoods — then New Year's Eve in the city. The trip's finale. Second SF night.",
+      legs: [],
+      stops: [
+        {
+          id: "stop-sf-golden-gate",
+          placeId: "golden-gate",
+          name: "Golden Gate Bridge viewpoints",
+          kind: "sightseeing",
+          time: "Morning",
+          description:
+            "Start at the bridge: Battery Spencer on the Marin side for the classic head-on view, or Marshall's Beach below the Presidio bluffs. Fog permitting, this is the signature San Francisco photo.",
+        },
+        {
+          id: "stop-sf-presidio-lands-end",
+          placeId: "lands-end",
+          name: "The Presidio & Lands End Trail",
+          kind: "activity",
+          time: "Late morning",
+          description:
+            "Walk the Lands End Trail along the headland to the ruins of the Sutro Baths, with cypress, ocean and the bridge behind you — one of the city's best free coastal walks.",
+        },
+        {
+          id: "stop-sf-palace",
+          placeId: "palace-of-fine-arts",
+          name: "Palace of Fine Arts",
+          kind: "sightseeing",
+          time: "Midday",
+          description:
+            "The lone surviving structure of the 1915 world's fair: a Roman-style rotunda and colonnade around a swan lagoon, free to wander.",
+        },
+        {
+          id: "stop-sf-alamo-square",
+          placeId: "alamo-square",
+          name: "Painted Ladies, Alamo Square",
+          kind: "sightseeing",
+          time: "Afternoon",
+          description:
+            "The row of Victorian houses with the downtown skyline behind them — the postcard view, from the park lawn.",
+        },
+        {
+          id: "stop-sf-twin-peaks",
+          placeId: "twin-peaks",
+          name: "Twin Peaks overlook",
+          kind: "sightseeing",
+          time: "Late afternoon",
+          description:
+            "Drive or climb to the highest easy viewpoint in the city for a 360° panorama of the grid, the bay and both bridges — best as the light turns gold.",
+        },
+        {
+          id: "stop-sf-coit-chinatown",
+          placeId: "coit-tower",
+          name: "Coit Tower, Chinatown & North Beach",
+          kind: "activity",
+          time: "Evening",
+          description:
+            "Telegraph Hill and Coit Tower, then down into Chinatown — the oldest in North America — and the Italian cafes of North Beach for dinner.",
+        },
+        {
+          id: "stop-sf-nye",
+          name: "New Year's Eve in the city",
+          kind: "flex",
+          time: "Night",
+          description:
+            "Ring in 2027 together: the Embarcadero waterfront, an elevated viewpoint, or a long neighborhood dinner. See the New Year's Eve guidance below and keep plans flexible until official details are published.",
+        },
+      ],
+      notes: [
+        "Night: San Francisco (second of two SF nights). This is the last hotel night before the January 1 checkout.",
+        "A full city day with no intercity driving — getting around is local only. Parking is scarce and expensive; Muni, BART, walking and short rideshares are usually easier than moving the car.",
+        "New Year's Eve: streets near the waterfront close to cars and transit runs extended late service in past years. Official Dec 31 2026 (ring in 2027) event details may not be published yet — recheck the city's channels closer to the date.",
+      ],
+      heroImage: {
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/San_Francisco_Skyline_%E2%80%94_Twin_Peaks_%286959153448%29.jpg/1280px-San_Francisco_Skyline_%E2%80%94_Twin_Peaks_%286959153448%29.jpg",
+        source:
+          "Tony Webster / Wikimedia Commons / CC BY 2.0 · https://commons.wikimedia.org/wiki/File:San_Francisco_Skyline_%E2%80%94_Twin_Peaks_(6959153448).jpg",
+      },
+      theme: {
+        key: "city-midnight",
+        name: "City & Midnight",
+        mood: "city lights into New Year's gold and navy",
+      },
+      experiences: {
+        feeling:
+          "A whole day to finally stop driving and belong to one city — bridge to beach to hilltop, then the streets filling for midnight. This is the finale: however the group rings in 2027, the point is that you do it together, somewhere that already feels like yours after a week on the road.",
+        viewpoints: [
+          {
+            title: "Golden Gate Bridge — Battery Spencer & Marshall's Beach",
+            detail:
+              "Battery Spencer on the Marin side gives the head-on, looking-down-the-deck view; Marshall's Beach, below the Presidio bluffs, frames the towers from the water. Either is the signature SF shot when the fog lifts.",
+            source: "https://en.wikipedia.org/wiki/Golden_Gate_Bridge",
+          },
+          {
+            title: "Lands End Trail & Sutro Baths",
+            detail:
+              "A headland trail through cypress to the concrete ruins of the 1896 Sutro Baths, with the open Pacific and the bridge at your back — free, and one of the wildest-feeling corners of the city.",
+            source: "https://en.wikipedia.org/wiki/Lands_End_(San_Francisco)",
+          },
+          {
+            title: "Twin Peaks panorama",
+            detail:
+              "The highest easy viewpoint in the city: a 360° sweep over the street grid, the bay and both bridges. Best in late light, and a calmer place to see midnight fireworks from a distance than the packed waterfront.",
             source: "https://en.wikipedia.org/wiki/Twin_Peaks_(San_Francisco)",
           },
           {
             title: "Coit Tower & Telegraph Hill",
             detail:
-              "Daytime: climb the Filbert Street steps through gardens to the tower for a bay panorama that stitches the whole city together.",
+              "Climb the Filbert Street garden steps to the tower for a bay panorama that stitches the whole city together, with the murals inside worth a look on the way up.",
             source: "https://en.wikipedia.org/wiki/Coit_Tower",
           },
         ],
         hiddenGems: [
           {
-            title: "Golden Gate Park, quietly",
+            title: "Palace of Fine Arts",
             detail:
-              "The Japanese Tea Garden and the conservatory give the group a slow, green morning after a week of movement — the opposite energy of a countdown crowd.",
-            source: "https://en.wikipedia.org/wiki/Golden_Gate_Park",
+              "A Roman-style rotunda and colonnade around a quiet lagoon, the last survivor of the 1915 Panama-Pacific Exposition — grand, free and uncrowded compared with the bridge.",
+            source: "https://en.wikipedia.org/wiki/Palace_of_Fine_Arts",
           },
           {
-            title: "16th Avenue Tiled Steps",
+            title: "Painted Ladies, Alamo Square",
             detail:
-              "A community-made mosaic staircase in the Sunset that climbs to a neighborhood viewpoint; the kind of small, human detail that makes a city feel personal.",
-            source: "https://en.wikipedia.org/wiki/Hidden_Garden_Steps",
+              "The famous row of Victorian houses with the skyline rising behind them, seen from the sloping park lawn — a classic, gentle stop between the bigger viewpoints.",
+            source: "https://en.wikipedia.org/wiki/Painted_ladies",
+          },
+          {
+            title: "The Presidio & Golden Gate Park",
+            detail:
+              "Two huge green anchors: the forested former army post under the bridge, and the park's Japanese Tea Garden and conservatory across town — a slow counterweight to a countdown crowd.",
+            source: "https://en.wikipedia.org/wiki/Golden_Gate_Park",
           },
         ],
         foodCulture: [
           {
             title: "Dim sum in Chinatown",
             detail:
-              "San Francisco's Chinatown is the oldest in North America; a late-morning dim sum feast is both a meal and a walk through living history.",
+              "San Francisco's Chinatown is the oldest in North America; a dim sum meal is both lunch and a walk through living history.",
             source: "https://en.wikipedia.org/wiki/Chinatown,_San_Francisco",
           },
           {
@@ -985,6 +1221,12 @@ export const trip: Trip = {
             detail:
               "An espresso and pastry in the old Italian quarter, then dinner nearby, is the unhurried counterweight to a big NYE night.",
             source: "https://en.wikipedia.org/wiki/North_Beach,_San_Francisco",
+          },
+          {
+            title: "Ferry Building marketplace",
+            detail:
+              "The restored Ferry Building on the Embarcadero is a food hall of local makers and a farmers' market — an easy grazing lunch with the bay right outside.",
+            source: "https://en.wikipedia.org/wiki/San_Francisco_Ferry_Building",
           },
         ],
         nye: [
@@ -1031,13 +1273,13 @@ export const trip: Trip = {
     },
     {
       id: "day-checkout",
-      dayNumber: 6,
+      dayNumber: 7,
       date: "2027-01-01",
       weekday: "Friday",
       title: "Departure and the missing return leg",
       overnight: null,
       summary:
-        "Check out of the San Francisco hotel. This is not a sixth hotel night.",
+        "Check out of the San Francisco hotel. This is not a seventh hotel night.",
       legs: [],
       stops: [
         {
@@ -1050,7 +1292,7 @@ export const trip: Trip = {
         },
       ],
       notes: [
-        "Friday, January 1 is checkout and departure. It is not a sixth hotel night.",
+        "Friday, January 1 is checkout and departure. It is not a seventh hotel night.",
       ],
     },
   ],
@@ -1194,7 +1436,7 @@ export const rentals: RentalAgreement[] = [
     company: "",
     pickupLocation: "Tempe, AZ",
     dropoffLocation: "San Francisco, CA",
-    pickupDate: "2026-12-27",
+    pickupDate: "2026-12-26",
     dropoffDate: "2027-01-01",
     baseRate: null,
     oneWayDropFee: null,
@@ -1208,7 +1450,7 @@ export const weatherCards: WeatherCard[] = [
   {
     id: "weather-grand-canyon",
     location: "Grand Canyon South Rim",
-    date: "2026-12-27",
+    date: "2026-12-26",
     guidance:
       "Recheck the forecast and roads 24-48 hours before driving.",
     warnings: [
@@ -1220,7 +1462,7 @@ export const weatherCards: WeatherCard[] = [
   {
     id: "weather-driving-day",
     location: "Day 2 driving day (South Rim -> San Diego)",
-    date: "2026-12-28",
+    date: "2026-12-27",
     guidance:
       "Protect the long driving day: keep the 5:30am start, rotate only between listed, rested drivers.",
     warnings: [
@@ -1420,5 +1662,86 @@ export const photos: Photo[] = [
     placeId: "golden-gate",
     source:
       "Frank Schulenburg / Wikimedia Commons / CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Golden_Gate_Bridge_as_seen_from_Marshall%E2%80%99s_Beach,_March_2018.jpg",
+  },
+  {
+    id: "photo-santa-monica",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Santa_Monica_pier%2C_dusk.jpg/1280px-Santa_Monica_pier%2C_dusk.jpg",
+    caption: "Santa Monica Pier at dusk, the Pacific end of Route 66",
+    dayId: "day-3",
+    placeId: "santa-monica-pier",
+    source:
+      "Boqiang Liao / Wikimedia Commons / CC BY-SA 2.0 · https://commons.wikimedia.org/wiki/File:Santa_Monica_pier,_dusk.jpg",
+  },
+  {
+    id: "photo-venice-beach",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Venice_Beach_Boardwalk_Los_Angeles_2019.jpg/1280px-Venice_Beach_Boardwalk_Los_Angeles_2019.jpg",
+    caption: "Venice Beach boardwalk, Los Angeles",
+    dayId: "day-3",
+    placeId: "venice-beach",
+    source:
+      "Steven Lek / Wikimedia Commons / CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Venice_Beach_Boardwalk_Los_Angeles_2019.jpg",
+  },
+  {
+    id: "photo-getty",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/View_of_Los_Angeles%2C_Getty_Center%2C_Los_Angeles%2C_California_%283125794604%29.jpg/1280px-View_of_Los_Angeles%2C_Getty_Center%2C_Los_Angeles%2C_California_%283125794604%29.jpg",
+    caption: "Los Angeles from the Getty Center",
+    dayId: "day-3",
+    placeId: "getty-center",
+    source:
+      "Ken Lund / Wikimedia Commons / CC BY-SA 2.0 · https://commons.wikimedia.org/wiki/File:View_of_Los_Angeles,_Getty_Center,_Los_Angeles,_California_(3125794604).jpg",
+  },
+  {
+    id: "photo-sf-battery-spencer",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Golden_Gate_Bridge_from_Battery_Spencer.jpg/1280px-Golden_Gate_Bridge_from_Battery_Spencer.jpg",
+    caption: "Golden Gate Bridge from Battery Spencer",
+    dayId: "day-sf-full",
+    placeId: "golden-gate",
+    source:
+      "Wattewyl / Wikimedia Commons / CC BY 3.0 · https://commons.wikimedia.org/wiki/File:Golden_Gate_Bridge_from_Battery_Spencer.jpg",
+  },
+  {
+    id: "photo-sf-lands-end",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Sutro_Baths_ruins.jpg/1280px-Sutro_Baths_ruins.jpg",
+    caption: "Sutro Baths ruins at Lands End, San Francisco",
+    dayId: "day-sf-full",
+    placeId: "lands-end",
+    source:
+      "Cullen328 / Wikimedia Commons / CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:Sutro_Baths_ruins.jpg",
+  },
+  {
+    id: "photo-sf-palace",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Palace_of_Fine_Arts_San_Francisco_January_2014_003.jpg/1280px-Palace_of_Fine_Arts_San_Francisco_January_2014_003.jpg",
+    caption: "Palace of Fine Arts, San Francisco",
+    dayId: "day-sf-full",
+    placeId: "palace-of-fine-arts",
+    source:
+      "King of Hearts / Wikimedia Commons / CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Palace_of_Fine_Arts_San_Francisco_January_2014_003.jpg",
+  },
+  {
+    id: "photo-sf-painted-ladies",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/San_Francisco_%28CA%2C_USA%29%2C_Painted_Ladies_--_2022_--_3055.jpg/1280px-San_Francisco_%28CA%2C_USA%29%2C_Painted_Ladies_--_2022_--_3055.jpg",
+    caption: "The Painted Ladies and skyline from Alamo Square",
+    dayId: "day-sf-full",
+    placeId: "alamo-square",
+    source:
+      "Dietmar Rabich / Wikimedia Commons / CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:San_Francisco_(CA,_USA),_Painted_Ladies_--_2022_--_3055.jpg",
+  },
+  {
+    id: "photo-sf-chinatown",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Dragon_Gate%2C_Chinatown%2C_SF_3_%28cropped%29.JPG/1280px-Dragon_Gate%2C_Chinatown%2C_SF_3_%28cropped%29.JPG",
+    caption: "Dragon Gate, the entrance to Chinatown, San Francisco",
+    dayId: "day-sf-full",
+    placeId: "chinatown",
+    source:
+      "BrokenSphere / Wikimedia Commons / CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Dragon_Gate,_Chinatown,_SF_3_(cropped).JPG",
+  },
+  {
+    id: "photo-sf-skyline",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/San_Francisco_Skyline_%E2%80%94_Twin_Peaks_%286959153448%29.jpg/1280px-San_Francisco_Skyline_%E2%80%94_Twin_Peaks_%286959153448%29.jpg",
+    caption: "San Francisco skyline at dusk from Twin Peaks",
+    dayId: "day-sf-full",
+    placeId: "twin-peaks",
+    source:
+      "Tony Webster / Wikimedia Commons / CC BY 2.0 · https://commons.wikimedia.org/wiki/File:San_Francisco_Skyline_%E2%80%94_Twin_Peaks_(6959153448).jpg",
   },
 ];

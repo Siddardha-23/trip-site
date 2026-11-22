@@ -52,7 +52,7 @@ export interface DayExperiences {
   viewpoints: ExperienceItem[];
   hiddenGems: ExperienceItem[];
   foodCulture: ExperienceItem[];
-  /** New Year's Eve guidance (Day 5 only). */
+  /** New Year's Eve guidance (the full San Francisco / New Year's Eve day only). */
   nye?: NyeGuidance[];
 }
 

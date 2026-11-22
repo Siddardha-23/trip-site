@@ -34,7 +34,7 @@ const DEFAULT_THEME: DayThemeTokens = {
   onHero: "#fffaf3",
 };
 
-/** The five finalized day themes, keyed by Day.theme.key. */
+/** The finalized day themes, keyed by Day.theme.key. */
 const DAY_THEMES: Record<string, DayThemeTokens> = {
   "red-rock-to-rim": {
     // Sedona sunrise amber shifting to canyon rust.
@@ -65,10 +65,24 @@ const DAY_THEMES: Record<string, DayThemeTokens> = {
     onHero: "#f2fbfa",
   },
   "big-sur-midnight": {
-    // Cliff greens into New Year's gold and navy.
+    // Legacy key (the old combined Big Sur + NYE day). Kept for safety.
     hero: "linear-gradient(135deg, #3f6f52 0%, #1b2a4a 55%, #d9a441 100%)",
     accent: "#2f4a74",
     accentSoft: "#dfe4ef",
+    onHero: "#f6f8ff",
+  },
+  "big-sur-to-city": {
+    // Big Sur cliff greens settling into a Pacific-blue city arrival.
+    hero: "linear-gradient(135deg, #3f6f52 0%, #2f7d86 55%, #1f5f7a 100%)",
+    accent: "#1f5f7a",
+    accentSoft: "#cfe3ea",
+    onHero: "#f2fbfa",
+  },
+  "city-midnight": {
+    // Full SF day into New Year's Eve: city lights, gold and navy.
+    hero: "linear-gradient(135deg, #3a4a7a 0%, #1b2a4a 55%, #d9a441 100%)",
+    accent: "#2f4a74",
+    accentSoft: "#e4dcc2",
     onHero: "#f6f8ff",
   },
 };

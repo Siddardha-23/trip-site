@@ -32,7 +32,7 @@ export default function DashboardPage() {
         </div>
         <Card className="flex flex-col gap-4 bg-gradient-to-br from-sand-100 to-surface">
           <p className="text-sm text-ink-800">
-            Up to six friends, one road, and five nights from the red rocks of
+            Up to six friends, one road, and six nights from the red rocks of
             Arizona down to the Pacific and up the Big Sur coast to San
             Francisco. Here is the whole plan in one place, no scrolling through
             a group chat to find it.

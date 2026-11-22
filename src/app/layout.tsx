@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Arizona to San Francisco",
-  description: "A shared road-trip plan: Dec 27-Jan 1 · 5 nights · up to 6 people.",
+  description: "A shared road-trip plan: Dec 26-Jan 1 · 6 nights · up to 6 people.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

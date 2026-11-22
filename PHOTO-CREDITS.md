@@ -21,10 +21,19 @@ Images are requested at a 1280px-wide thumbnail to keep payloads small.
 | 2 | Gaslamp Quarter (photo strip) | Gaslamp Quarter, San Diego | Dietmar Rabich | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:San_Diego_(California,_USA),_Gaslamp_Quarter_--_2012_--_5411.jpg |
 | 2 | Sunset Cliffs / San Diego (photo strip + **day hero**) | Sunset Cliffs Natural Park | Tuxyso | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Sunset_Cliffs_San_Diego_2013.jpg |
 | 3 | Griffith Observatory (photo strip + **day hero**) | Griffith Observatory at dusk | Jeremye77 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Griffith_Observatory_-_Dusk.jpg |
+| 3 | Santa Monica Pier (photo strip) | Santa Monica Pier at dusk | Boqiang Liao | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Santa_Monica_pier,_dusk.jpg |
+| 3 | Venice Beach (photo strip) | Venice Beach boardwalk | Steven Lek | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Venice_Beach_Boardwalk_Los_Angeles_2019.jpg |
+| 3 | Getty Center (photo strip) | Los Angeles from the Getty Center | Ken Lund | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:View_of_Los_Angeles,_Getty_Center,_Los_Angeles,_California_(3125794604).jpg |
 | 4 | Cannery Row (photo strip + **day hero**) | Cannery Row waterfront, Monterey | Lance Vanlewen | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Cannery_Row,_Monterey,_California.jpg |
 | 5 | Bixby Creek Bridge (photo strip) | Bixby Creek Bridge, Big Sur | King of Hearts | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Bixby_Creek_Bridge_May_2011_001.jpg |
 | 5 | McWay Falls (photo strip) | McWay Falls, Julia Pfeiffer Burns SP | King of Hearts | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:McWay_Falls_Big_Sur_May_2011_001.jpg |
 | 5 | Golden Gate Bridge (photo strip + **day hero**) | Golden Gate from Marshall's Beach | Frank Schulenburg | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Golden_Gate_Bridge_as_seen_from_Marshall%E2%80%99s_Beach,_March_2018.jpg |
+| 6 | Golden Gate Bridge (photo strip) | Golden Gate from Battery Spencer | Wattewyl | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Golden_Gate_Bridge_from_Battery_Spencer.jpg |
+| 6 | Lands End / Sutro Baths (photo strip) | Sutro Baths ruins | Cullen328 | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Sutro_Baths_ruins.jpg |
+| 6 | Palace of Fine Arts (photo strip) | Palace of Fine Arts | King of Hearts | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Palace_of_Fine_Arts_San_Francisco_January_2014_003.jpg |
+| 6 | Alamo Square (photo strip) | Painted Ladies and skyline | Dietmar Rabich | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:San_Francisco_(CA,_USA),_Painted_Ladies_--_2022_--_3055.jpg |
+| 6 | Chinatown (photo strip) | Dragon Gate, Chinatown | BrokenSphere | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Dragon_Gate,_Chinatown,_SF_3_(cropped).JPG |
+| 6 | Twin Peaks / SF skyline (photo strip + **day hero**) | SF skyline from Twin Peaks | Tony Webster | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:San_Francisco_Skyline_%E2%80%94_Twin_Peaks_(6959153448).jpg |
 
 ## Gradient fallbacks (no verified Commons image)
 

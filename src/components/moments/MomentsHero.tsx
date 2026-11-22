@@ -22,7 +22,7 @@ export function MomentsHero({ trip }: { trip: Trip }) {
         </h1>
         <p className="text-lg text-white/90">{trip.subtitle}</p>
         <p className="max-w-xl text-sm text-white/85">
-          Up to six friends, one road, and five nights from the red rocks of
+          Up to six friends, one road, and six nights from the red rocks of
           Arizona down the Pacific coast and up Big Sur to San Francisco.
         </p>
       </div>
