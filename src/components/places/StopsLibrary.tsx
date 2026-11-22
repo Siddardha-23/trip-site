@@ -24,7 +24,13 @@ export function StopsLibrary({ seedDay }: { seedDay: Day }) {
 
   const refresh = useCallback(() => {
     void get("days", seedDay.id).then((next) => {
-      if (next) setDay(next);
+      if (!next) return;
+      // The `days` table has no `stops` column — stops are a separate
+      // first-class entity (see supabase/migrations/0001_init.sql), so a Day
+      // read back through the repository has `stops === undefined`. Merge it
+      // onto the current record so `day.stops` is always an array and the
+      // render never crashes on `day.stops.length`.
+      setDay((prev) => ({ ...next, stops: next.stops ?? prev.stops }));
     });
   }, [seedDay.id]);
 
