@@ -21,6 +21,12 @@ const nextConfig: NextConfig = {
         hostname: "**.supabase.co",
         pathname: "/storage/v1/object/public/**",
       },
+      {
+        // Freely-licensed Wikimedia Commons imagery (hero + photo strips).
+        // Commons permits hotlinking and is CDN-backed.
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+      },
     ],
   },
 };

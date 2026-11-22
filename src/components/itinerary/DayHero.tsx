@@ -1,5 +1,7 @@
+import Image from "next/image";
 import { Badge } from "@/components/ui/Badge";
 import { dayThemeVars } from "@/lib/theme/day-themes";
+import { resolvePhotoUrl } from "@/lib/images/storage";
 import type { Day } from "@/lib/types";
 
 function formatDate(iso: string): string {
@@ -20,12 +22,29 @@ export function DayHero({ day }: { day: Day }) {
   const themeName = day.theme?.name;
   const mood = day.theme?.mood;
   const feeling = day.experiences?.feeling;
+  const heroSrc = resolvePhotoUrl(day.heroImage?.url ?? null);
 
   return (
     <div
       style={dayThemeVars(day.theme?.key)}
-      className="day-hero day-hero-animate flex flex-col gap-4 rounded-3xl p-6 shadow-sm sm:p-8"
+      className="day-hero day-hero-animate relative isolate flex flex-col gap-4 overflow-hidden rounded-3xl p-6 shadow-sm sm:p-8"
     >
+      {heroSrc ? (
+        <>
+          {/* Real licensed photo behind the content. The theme gradient below
+              stays as a scrim so the per-day mood reads and text is legible. */}
+          <Image
+            src={heroSrc}
+            alt={day.theme?.name ? `${day.theme.name} — ${day.title}` : day.title}
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 768px"
+            className="-z-20 object-cover"
+          />
+          <div className="day-hero-scrim absolute inset-0 -z-10" aria-hidden />
+        </>
+      ) : null}
+
       <div className="flex flex-wrap items-center gap-2">
         <Badge className="bg-white/20 text-[color:var(--day-on-hero)] backdrop-blur-sm">
           Day {day.dayNumber}

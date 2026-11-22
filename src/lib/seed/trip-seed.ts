@@ -402,6 +402,11 @@ export const trip: Trip = {
         "Winter gear: pack layers, water and snacks, and over-the-shoe traction for icy rim paths.",
         "Fuel in Flagstaff before the canyon leg; recheck the forecast and roads 24-48 hours before driving.",
       ],
+      heroImage: {
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Grand_Canyon_South_Rim_at_Sunset.jpg/1280px-Grand_Canyon_South_Rim_at_Sunset.jpg",
+        source:
+          "Mgimelfarb / Wikimedia Commons / CC0 · https://commons.wikimedia.org/wiki/File:Grand_Canyon_South_Rim_at_Sunset.jpg",
+      },
       theme: {
         key: "red-rock-to-rim",
         name: "Red Rock to the Rim",
@@ -548,6 +553,11 @@ export const trip: Trip = {
       notes: [
         "Winter access: South Rim is open year-round, but snow and ice can temporarily close roads. Hermit Road normally opens to private vehicles under 22 feet from December through February, weather permitting. Stay on rim viewpoints rather than adding a below-rim hike to this short visit.",
       ],
+      heroImage: {
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Sunset_Cliffs_San_Diego_2013.jpg/1280px-Sunset_Cliffs_San_Diego_2013.jpg",
+        source:
+          "Tuxyso / Wikimedia Commons / CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:Sunset_Cliffs_San_Diego_2013.jpg",
+      },
       theme: {
         key: "canyon-to-coast",
         name: "Canyon to the Coast",
@@ -657,6 +667,11 @@ export const trip: Trip = {
         "Protect this driving day: avoid adding Route 66 or Joshua Tree detours. Rotate only between listed, rested drivers. If nobody wants a drive this long, this is the first leg to replace with a flight or split with an extra night.",
         "Night: Los Angeles. A Hollywood base fits this stop.",
       ],
+      heroImage: {
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Griffith_Observatory_-_Dusk.jpg/1280px-Griffith_Observatory_-_Dusk.jpg",
+        source:
+          "Jeremye77 / Wikimedia Commons / CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Griffith_Observatory_-_Dusk.jpg",
+      },
       theme: {
         key: "city-of-angels",
         name: "City of Angels",
@@ -773,6 +788,11 @@ export const trip: Trip = {
         "Night: Monterey / Carmel. A scenic coastal overnight — nothing booked.",
         "The LA → Monterey distance and drive-time are an estimate (US-101 ~330-345 mi, ~5.5-6 hr), not a transcribed exact figure. Recheck before booking.",
       ],
+      heroImage: {
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Cannery_Row%2C_Monterey%2C_California.jpg/1280px-Cannery_Row%2C_Monterey%2C_California.jpg",
+        source:
+          "Lance Vanlewen / Wikimedia Commons / CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Cannery_Row,_Monterey,_California.jpg",
+      },
       theme: {
         key: "pacific-turn",
         name: "The Pacific Turn",
@@ -900,6 +920,11 @@ export const trip: Trip = {
         "Night: San Francisco (single night). This is the last hotel night before the January 1 checkout.",
         "Drive Big Sur / Highway 1 in full daylight. The coast road is prone to seasonal and storm-related closures — check Caltrans and NPS status before relying on it, and keep the US-101 inland route as a backup.",
       ],
+      heroImage: {
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Golden_Gate_Bridge_as_seen_from_Marshall%E2%80%99s_Beach%2C_March_2018.jpg/1280px-Golden_Gate_Bridge_as_seen_from_Marshall%E2%80%99s_Beach%2C_March_2018.jpg",
+        source:
+          "Frank Schulenburg / Wikimedia Commons / CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Golden_Gate_Bridge_as_seen_from_Marshall%E2%80%99s_Beach,_March_2018.jpg",
+      },
       theme: {
         key: "big-sur-midnight",
         name: "Big Sur & Midnight",
@@ -1285,38 +1310,57 @@ export const openDecisions: OpenDecision[] = [
 export const photos: Photo[] = [
   {
     id: "photo-sedona",
-    url: null,
-    caption: "Red-rock sunrise in Sedona",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Cathedral_Rock_-_Sedona_AZ-1.jpg/1280px-Cathedral_Rock_-_Sedona_AZ-1.jpg",
+    caption: "Cathedral Rock at sunset, Sedona",
     dayId: "day-1",
     placeId: "sedona",
+    source:
+      "Terrydarc / Wikimedia Commons / CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:Cathedral_Rock_-_Sedona_AZ-1.jpg",
   },
   {
     id: "photo-oak-creek-vista",
-    url: null,
-    caption: "Oak Creek Vista Overlook, top of the canyon switchbacks",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Coconino_County_-_Oak_Creek_Canyon.jpg/1280px-Coconino_County_-_Oak_Creek_Canyon.jpg",
+    caption: "Oak Creek Canyon from the Oak Creek Vista",
     dayId: "day-1",
     placeId: "oak-creek-vista",
+    source:
+      "Eric Polk / Wikimedia Commons / CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Coconino_County_-_Oak_Creek_Canyon.jpg",
   },
   {
     id: "photo-williams",
-    url: null,
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Williams-Streetscape.jpg/1280px-Williams-Streetscape.jpg",
     caption: "Route 66 main street in Williams",
     dayId: "day-1",
     placeId: "williams",
+    source:
+      "Steven C. Price / Wikimedia Commons / CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Williams-Streetscape.jpg",
   },
   {
     id: "photo-south-rim",
-    url: null,
-    caption: "Canyon sunset from the South Rim",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Grand_Canyon_Mather_Point_2013.jpg/1280px-Grand_Canyon_Mather_Point_2013.jpg",
+    caption: "The Grand Canyon from Mather Point",
     dayId: "day-1",
     placeId: "mather-point",
+    source:
+      "Tuxyso / Wikimedia Commons / CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:Grand_Canyon_Mather_Point_2013.jpg",
   },
   {
     id: "photo-gaslamp",
-    url: null,
-    caption: "Gaslamp Quarter night out, San Diego",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/San_Diego_%28California%2C_USA%29%2C_Gaslamp_Quarter_--_2012_--_5411.jpg/1280px-San_Diego_%28California%2C_USA%29%2C_Gaslamp_Quarter_--_2012_--_5411.jpg",
+    caption: "Gaslamp Quarter, San Diego",
     dayId: "day-2",
     placeId: "gaslamp-quarter",
+    source:
+      "Dietmar Rabich / Wikimedia Commons / CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:San_Diego_(California,_USA),_Gaslamp_Quarter_--_2012_--_5411.jpg",
+  },
+  {
+    id: "photo-sunset-cliffs",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Sunset_Cliffs_San_Diego_2013.jpg/1280px-Sunset_Cliffs_San_Diego_2013.jpg",
+    caption: "Sunset Cliffs Natural Park, Point Loma",
+    dayId: "day-2",
+    placeId: "san-diego",
+    source:
+      "Tuxyso / Wikimedia Commons / CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:Sunset_Cliffs_San_Diego_2013.jpg",
   },
   {
     id: "photo-balboa",
@@ -1327,17 +1371,21 @@ export const photos: Photo[] = [
   },
   {
     id: "photo-griffith",
-    url: null,
-    caption: "Griffith Observatory and the Hollywood Sign view at dusk",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Griffith_Observatory_-_Dusk.jpg/1280px-Griffith_Observatory_-_Dusk.jpg",
+    caption: "Griffith Observatory at dusk",
     dayId: "day-3",
     placeId: "griffith-observatory",
+    source:
+      "Jeremye77 / Wikimedia Commons / CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Griffith_Observatory_-_Dusk.jpg",
   },
   {
     id: "photo-cannery-row",
-    url: null,
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Cannery_Row%2C_Monterey%2C_California.jpg/1280px-Cannery_Row%2C_Monterey%2C_California.jpg",
     caption: "Cannery Row waterfront, Monterey",
     dayId: "day-4",
     placeId: "cannery-row",
+    source:
+      "Lance Vanlewen / Wikimedia Commons / CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Cannery_Row,_Monterey,_California.jpg",
   },
   {
     id: "photo-carmel",
@@ -1348,23 +1396,29 @@ export const photos: Photo[] = [
   },
   {
     id: "photo-bixby-bridge",
-    url: null,
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Bixby_Creek_Bridge_May_2011_001.jpg/1280px-Bixby_Creek_Bridge_May_2011_001.jpg",
     caption: "Bixby Creek Bridge on Big Sur's Highway 1",
     dayId: "day-5",
     placeId: "bixby-bridge",
+    source:
+      "King of Hearts / Wikimedia Commons / CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:Bixby_Creek_Bridge_May_2011_001.jpg",
   },
   {
     id: "photo-mcway-falls",
-    url: null,
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/McWay_Falls_Big_Sur_May_2011_001.jpg/1280px-McWay_Falls_Big_Sur_May_2011_001.jpg",
     caption: "McWay Falls dropping onto its hidden cove",
     dayId: "day-5",
     placeId: "mcway-falls",
+    source:
+      "King of Hearts / Wikimedia Commons / CC BY-SA 3.0 · https://commons.wikimedia.org/wiki/File:McWay_Falls_Big_Sur_May_2011_001.jpg",
   },
   {
     id: "photo-golden-gate",
-    url: null,
-    caption: "Golden Gate Bridge on arrival in San Francisco",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Golden_Gate_Bridge_as_seen_from_Marshall%E2%80%99s_Beach%2C_March_2018.jpg/1280px-Golden_Gate_Bridge_as_seen_from_Marshall%E2%80%99s_Beach%2C_March_2018.jpg",
+    caption: "Golden Gate Bridge from Marshall's Beach, San Francisco",
     dayId: "day-5",
     placeId: "golden-gate",
+    source:
+      "Frank Schulenburg / Wikimedia Commons / CC BY-SA 4.0 · https://commons.wikimedia.org/wiki/File:Golden_Gate_Bridge_as_seen_from_Marshall%E2%80%99s_Beach,_March_2018.jpg",
   },
 ];

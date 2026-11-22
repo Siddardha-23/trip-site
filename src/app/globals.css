@@ -93,6 +93,21 @@ body {
   color: var(--day-on-hero, #fffaf3);
 }
 
+/* Scrim layered over a real hero photo: the day's theme gradient at reduced
+   opacity (so the per-day mood still reads) plus a darkening wash bottom-to-top
+   that keeps the white hero text legible over any image. */
+.day-hero-scrim {
+  background-image: var(--day-hero, var(--gradient-celebrate)),
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.45) 45%,
+      rgba(0, 0, 0, 0.25) 100%
+    );
+  background-blend-mode: soft-light, normal;
+  opacity: 0.86;
+}
+
 /* Subtle left-edge tint using the day's accent (itinerary list + bands). */
 .day-accent-edge {
   border-left: 3px solid var(--day-accent, var(--color-ember-500));

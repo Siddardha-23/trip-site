@@ -90,6 +90,21 @@ export interface Day {
   experiences?: DayExperiences;
   /** Per-day visual/emotional theme for the UI; optional/additive. */
   theme?: DayTheme;
+  /**
+   * Optional hero image for the day. An absolute http(s) URL (freely-licensed
+   * Wikimedia Commons imagery) rendered behind the themed gradient scrim; the
+   * theme gradient still overlays it so the mood and text legibility hold. When
+   * unset, the hero falls back to the pure theme gradient.
+   */
+  heroImage?: DayHeroImage;
+}
+
+/** A licensed hero image wired to a Day. */
+export interface DayHeroImage {
+  /** Absolute http(s) URL (Wikimedia Commons thumbnail). */
+  url: string;
+  /** Attribution / license note and Commons file page. */
+  source: string;
 }
 
 /** A driving leg between two places. */
