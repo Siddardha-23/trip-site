@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
+import { dayThemeVars } from "@/lib/theme/day-themes";
 import type { Day } from "@/lib/types";
 
 const WEEKDAY_SHORT: Record<string, string> = {
@@ -26,10 +27,13 @@ export function DayCard({ day }: { day: Day }) {
 
   return (
     <Link href={`/itinerary/${day.dayNumber}`} className="block">
-      <Card className="flex flex-col gap-2 transition-shadow hover:shadow-md">
+      <Card
+        style={dayThemeVars(day.theme?.key)}
+        className="day-accent-edge flex flex-col gap-2 transition-shadow hover:shadow-md"
+      >
         <div className="flex items-start justify-between gap-3">
           <div className="flex flex-col">
-            <span className="text-xs font-medium uppercase tracking-wide text-ember-600">
+            <span className="text-xs font-medium uppercase tracking-wide text-[color:var(--day-accent)]">
               Day {day.dayNumber} · {WEEKDAY_SHORT[day.weekday]},{" "}
               {formatDate(day.date)}
             </span>

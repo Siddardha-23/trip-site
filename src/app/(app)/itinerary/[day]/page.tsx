@@ -2,11 +2,14 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { Card } from "@/components/ui/Card";
-import { LegList } from "@/components/itinerary/LegList";
+import { DayHero } from "@/components/itinerary/DayHero";
+import { DayTimeline } from "@/components/itinerary/DayTimeline";
+import { DayPhotoStrip } from "@/components/itinerary/DayPhotoStrip";
+import { DayInfoCards } from "@/components/itinerary/DayInfoCards";
 import { DayExperiences } from "@/components/itinerary/DayExperiences";
 import { StopsLibrary } from "@/components/places/StopsLibrary";
-import { trip } from "@/lib/seed/trip-seed";
+import { dayThemeVars } from "@/lib/theme/day-themes";
+import { trip, photos } from "@/lib/seed/trip-seed";
 
 export function generateStaticParams() {
   return trip.days.map((day) => ({ day: String(day.dayNumber) }));
@@ -29,33 +32,45 @@ async function DayContent({ params }: { params: Promise<{ day: string }> }) {
   const day = trip.days.find((d) => String(d.dayNumber) === dayParam);
   if (!day) notFound();
 
-  const formattedDate = new Date(`${day.date}T00:00:00`).toLocaleDateString(
-    "en-US",
-    { weekday: "long", month: "long", day: "numeric" },
-  );
+  const dayPhotos = photos.filter((photo) => photo.dayId === day.id);
 
+  // Set the theme vars once on the wrapper so the hero, timeline drive bands,
+  // info cards and photo fallbacks all read this day's --day-* palette.
   return (
-    <div className="flex flex-col gap-8">
-      <div className="flex flex-col gap-1">
-        <Link
-          href="/itinerary"
-          className="text-sm text-muted hover:text-clay-700"
-        >
-          ← All days
-        </Link>
-        <span className="text-xs font-medium uppercase tracking-wide text-ember-600">
-          Day {day.dayNumber} · {formattedDate}
-        </span>
-        <h1 className="text-2xl font-semibold tracking-tight text-ink-900">
-          {day.title}
-        </h1>
-        <p className="text-muted">{day.summary}</p>
-      </div>
+    <div style={dayThemeVars(day.theme?.key)} className="flex flex-col gap-8">
+      <Link
+        href="/itinerary"
+        className="text-sm text-muted hover:text-[color:var(--day-accent)]"
+      >
+        ← All days
+      </Link>
+
+      <DayHero day={day} />
 
       <section>
-        <SectionHeader title="Driving" subtitle="Legs, mileage and departure targets." />
-        <LegList legs={day.legs} />
+        <SectionHeader
+          title="The day, hour by hour"
+          subtitle="Stops in order, with the drive between each."
+        />
+        <DayTimeline day={day} />
       </section>
+
+      {dayPhotos.length > 0 ? (
+        <section>
+          <SectionHeader
+            title="Photo strip"
+            subtitle="Themed placeholders until the group's own shots are uploaded."
+          />
+          <DayPhotoStrip photos={dayPhotos} />
+        </section>
+      ) : null}
+
+      {day.notes.length > 0 ? (
+        <section>
+          <SectionHeader title="Good to know" subtitle="Lodging, fees and winter safety." />
+          <DayInfoCards day={day} />
+        </section>
+      ) : null}
 
       <section>
         <SectionHeader
@@ -64,19 +79,6 @@ async function DayContent({ params }: { params: Promise<{ day: string }> }) {
         />
         <StopsLibrary seedDay={day} />
       </section>
-
-      {day.notes.length > 0 ? (
-        <section>
-          <SectionHeader title="Notes & warnings" />
-          <Card>
-            <ul className="flex list-disc flex-col gap-2 pl-5 text-sm text-ink-800">
-              {day.notes.map((note, i) => (
-                <li key={i}>{note}</li>
-              ))}
-            </ul>
-          </Card>
-        </section>
-      ) : null}
 
       {day.experiences ? (
         <section>
