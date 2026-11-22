@@ -7,7 +7,7 @@ import { MomentsGallery } from "@/components/moments/MomentsGallery";
 import { trip, photos } from "@/lib/seed/trip-seed";
 
 const DESCRIPTION =
-  "Four friends, one road, and five nights from the red rocks of Arizona to the fog of San Francisco.";
+  "Up to six friends, one road, and five nights from the red rocks of Arizona down the Pacific coast and up Big Sur to San Francisco.";
 
 // Open Graph + Twitter card so the shared link previews well on social apps.
 export const metadata: Metadata = {

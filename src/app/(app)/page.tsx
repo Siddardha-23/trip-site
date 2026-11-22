@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/Card";
 import { TripSummary } from "@/components/dashboard/TripSummary";
+import { RouteArc } from "@/components/dashboard/RouteArc";
 import { RouteLedger } from "@/components/dashboard/RouteLedger";
 import { Countdown } from "@/components/countdown/Countdown";
 import { TripProgress } from "@/components/countdown/TripProgress";
@@ -31,9 +32,10 @@ export default function DashboardPage() {
         </div>
         <Card className="flex flex-col gap-4 bg-gradient-to-br from-sand-100 to-surface">
           <p className="text-sm text-ink-800">
-            Four friends, one road, and five nights from the red rocks of Arizona
-            to the fog of San Francisco. Here is the whole plan in one place —
-            no scrolling through a group chat to find it.
+            Up to six friends, one road, and five nights from the red rocks of
+            Arizona down to the Pacific and up the Big Sur coast to San
+            Francisco. Here is the whole plan in one place, no scrolling through
+            a group chat to find it.
           </p>
           <Countdown startDate={trip.startDate} endDate={trip.endDate} />
           <TripProgress
@@ -45,6 +47,8 @@ export default function DashboardPage() {
       </section>
 
       <TripSummary />
+
+      <RouteArc />
 
       <RouteLedger />
     </div>
