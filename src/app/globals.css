@@ -158,9 +158,26 @@ body {
   }
 }
 
-/* Gentle countdown motion: a soft warm pulse on the counting tiles that grows
-   warmer/brighter as the date nears. Reduced-motion users get a static UI —
-   the animation only applies when the user has no reduced-motion preference. */
+/* Map pin labels. Google renders these as a text span (our className) under
+   each numbered pin. A white halo via layered text-shadows keeps the warm
+   label legible over roads, terrain, and water without a heavy chip that would
+   overlap neighboring pins. */
+.map-point-label {
+  color: #9a3f1a;
+  text-shadow:
+    0 0 2px #ffffff,
+    0 0 3px #ffffff,
+    1px 1px 2px #ffffff,
+    -1px -1px 2px #ffffff;
+  letter-spacing: 0.01em;
+}
+
+/* Celebratory countdown: the emotional centerpiece of the dashboard. A soft
+   warm pulse rides across the tiles like a wave, the whole group lifts in on
+   mount, a shimmer sweeps the tile faces, and the seconds tile flips on each
+   tick. ALL of this is gated behind prefers-reduced-motion: no-preference, so
+   reduced-motion users get a clean static UI — the base .countdown-tile /
+   .countdown-value rules below carry no motion. */
 @media (prefers-reduced-motion: no-preference) {
   @keyframes tile-pulse {
     0%,
@@ -169,13 +186,86 @@ body {
       box-shadow: 0 0 0 0 rgba(224, 90, 99, 0);
     }
     50% {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px -6px rgba(224, 90, 99, 0.45);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px -8px rgba(224, 90, 99, 0.5);
     }
+  }
+
+  @keyframes tile-shimmer {
+    0% {
+      transform: translateX(-120%) rotate(8deg);
+    }
+    60%,
+    100% {
+      transform: translateX(260%) rotate(8deg);
+    }
+  }
+
+  @keyframes stage-rise {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes seconds-flip {
+    0% {
+      transform: rotateX(-82deg);
+      opacity: 0.35;
+    }
+    55% {
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes hype-glow {
+    0%,
+    100% {
+      opacity: 0.85;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  /* Gentle celebratory entrance for the whole countdown. */
+  .countdown-stage {
+    animation: stage-rise 0.5s ease-out both;
+  }
+
+  .countdown-hype {
+    animation: hype-glow 3.2s ease-in-out infinite;
   }
 
   .countdown-tile {
     animation: tile-pulse 2.8s ease-in-out infinite;
+  }
+
+  /* A soft light sweep across each tile face. */
+  .countdown-tile::after {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: 0;
+    height: 140%;
+    width: 40%;
+    background: linear-gradient(
+      100deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.55) 50%,
+      transparent 100%
+    );
+    animation: tile-shimmer 4.5s ease-in-out infinite;
+    pointer-events: none;
   }
 
   /* Stagger the tiles so the pulse feels like a warm, celebratory wave. */
@@ -187,5 +277,26 @@ body {
   }
   .countdown-tile:nth-child(4) {
     animation-delay: 1.05s;
+  }
+  .countdown-tile:nth-child(2)::after {
+    animation-delay: 0.4s;
+  }
+  .countdown-tile:nth-child(3)::after {
+    animation-delay: 0.8s;
+  }
+  .countdown-tile:nth-child(4)::after {
+    animation-delay: 1.2s;
+  }
+
+  /* The seconds tile gets a slightly brighter glow to draw the eye. */
+  .countdown-tile--seconds {
+    box-shadow: 0 8px 22px -10px rgba(221, 107, 53, 0.55);
+  }
+
+  /* Each new seconds value flips in (re-keyed per tick in the component). */
+  .countdown-value--tick {
+    transform-origin: center top;
+    animation: seconds-flip 0.5s ease-out both;
+    backface-visibility: hidden;
   }
 }
