@@ -15,7 +15,7 @@ export function TripSummary() {
           value={trip.nights}
           hint={`${baseCount} overnight bases`}
         />
-        <Stat label="Travelers" value="up to 6" hint={trip.roomSetup} />
+        <Stat label="Travelers" value={trip.travelerCount} hint={trip.roomSetup} />
         <Stat
           label="Intercity"
           value={`~${trip.totalIntercityMiles.toLocaleString()} mi`}
