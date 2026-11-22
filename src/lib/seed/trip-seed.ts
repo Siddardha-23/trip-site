@@ -299,7 +299,7 @@ export const trip: Trip = {
   checkoutDate: "2027-01-01",
   nights: 6,
   travelerCount: 7,
-  roomSetup: "2 rooms · Room 1: 2 queens (4) · Room 2: 1 king/queen fitted for 3 (rollaway)",
+  roomSetup: "2 rooms · 2 queen beds each · split 4 + 3",
   totalIntercityMiles: 1377, // Sum of all intercity legs: 270 + 504 + 128 + 335 + 140 (the extra SF night adds no intercity miles)
   totalDrivingHours: 26.5, // Sum of per-leg low-bound hours across all days
   pace: "Fast; early starts, December 27 is a full 504-mi driving day, Big Sur driven in daylight",
